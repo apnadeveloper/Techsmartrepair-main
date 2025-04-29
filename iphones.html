@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone Repairs | Smart Tech</title>
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <!-- Custom CSS -->
-     <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #FF138B; /* Bright pink */
-            --secondary-color: #c10f6b; /* Darker pink */
-            --light-pink: #ffebf6; /* Light pink background */
+            --primary-color: #FF138B;
+            /* Bright pink */
+            --secondary-color: #c10f6b;
+            /* Darker pink */
+            --light-pink: #ffebf6;
+            /* Light pink background */
             --light-color: #f8f9fa;
             --dark-color: #212529;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--dark-color);
             line-height: 1.6;
         }
-        
+
         /* Header Styles */
         .iphone-header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -35,7 +39,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .iphone-header::before {
             content: "";
             position: absolute;
@@ -46,7 +50,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
-        
+
         .iphone-header::after {
             content: "";
             position: absolute;
@@ -57,7 +61,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
-        
+
         /* Product Card Styles */
         .iphone-card {
             border: none;
@@ -68,12 +72,12 @@
             overflow: hidden;
             border-top: 4px solid var(--primary-color);
         }
-        
+
         .iphone-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(255, 19, 139, 0.15);
         }
-        
+
         .iphone-img {
             width: 100%;
             height: 200px;
@@ -81,17 +85,17 @@
             padding: 1rem;
             background-color: var(--light-color);
         }
-        
+
         /* Button Styles */
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border: none;
         }
-        
+
         .btn-primary:hover {
             background: linear-gradient(135deg, #e0127d, #a00d5a);
         }
-        
+
         /* Repair Detail Page Styles */
         .repair-section {
             background-color: #fff;
@@ -100,23 +104,23 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .repair-header {
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .repair-header h2 {
             color: #333;
             font-weight: 700;
             margin-bottom: 5px;
         }
-        
+
         .repair-header h3 {
             color: var(--primary-color);
             font-weight: 600;
         }
-        
+
         .repair-card {
             background: var(--light-pink);
             border-radius: 8px;
@@ -127,12 +131,12 @@
             border: 1px solid #eee;
             margin-top: 10px;
         }
-        
+
         .repair-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255, 19, 139, 0.15);
         }
-        
+
         .repair-title {
             font-size: 1.4rem;
             font-weight: 700;
@@ -140,7 +144,7 @@
             color: #333;
             text-align: center;
         }
-        
+
         .repair-price {
             font-size: 2rem;
             font-weight: 700;
@@ -148,25 +152,25 @@
             margin-bottom: 25px;
             text-align: center;
         }
-        
+
         .spec-item {
             margin-bottom: 12px;
             padding-bottom: 12px;
             text-align: center;
             border-bottom: 1px solid var(--primary-color);
         }
-        
+
         .spec-value {
             color: #333;
             font-weight: 500;
         }
-        
+
         .highlight-card {
             border: 2px solid var(--secondary-color);
             position: relative;
             background-color: var(--light-pink);
         }
-        
+
         .highlight-badge {
             position: absolute;
             top: -12px;
@@ -179,7 +183,7 @@
             font-weight: bold;
             box-shadow: 0 2px 8px rgba(255, 19, 139, 0.3);
         }
-        
+
         /* Back Button */
         .back-btn {
             margin-bottom: 30px;
@@ -189,17 +193,17 @@
             font-weight: 600;
             cursor: pointer;
         }
-        
+
         .back-btn:hover {
             color: var(--secondary-color);
         }
-        
+
         /* Additional Services Styles */
         .additional-services {
             margin-top: 50px;
             padding: 30px 0;
         }
-        
+
         .service-card {
             background: white;
             border-radius: 10px;
@@ -209,45 +213,45 @@
             transition: all 0.3s ease;
             border-left: 4px solid var(--primary-color);
         }
-        
+
         .service-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(255, 19, 139, 0.1);
         }
-        
+
         .service-title {
             font-weight: 600;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
-        
+
         .service-price {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         .service-icon {
             margin-right: 10px;
             color: var(--primary-color);
             font-size: 1.2rem;
         }
-        
+
         .btn-add-to-cart {
             background: #c10f6b;
-            color:white;
+            color: white;
             border: 1px solid var(--primary-color);
             padding: 5px 15px;
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        
+
         .btn-add-to-cart:hover {
             background: var(--primary-color);
             color: white;
         }
-        
+
         /* Booking Modal Styles */
         .booking-modal {
             display: none;
@@ -260,7 +264,7 @@
             z-index: 1050;
             overflow-y: auto;
         }
-        
+
         .booking-modal-content {
             background-color: white;
             margin: 5% auto;
@@ -271,7 +275,7 @@
             width: 90%;
             position: relative;
         }
-        
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -282,34 +286,34 @@
             background: none;
             border: none;
         }
-        
+
         .modal-header {
             border-bottom: 1px solid #eee;
             padding-bottom: 15px;
             margin-bottom: 20px;
         }
-        
+
         .modal-title {
             color: var(--primary-color);
             font-weight: 700;
         }
-        
+
         .form-label {
             font-weight: 600;
         }
-        
+
         .form-control {
             margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #ddd;
             padding: 10px 15px;
         }
-        
+
         .form-control:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
         }
-        
+
         .submit-btn {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -321,59 +325,60 @@
             margin-top: 15px;
             transition: all 0.3s ease;
         }
-        
+
         .submit-btn:hover {
             background: linear-gradient(135deg, #e0127d, #a00d5a);
             transform: translateY(-2px);
         }
-        
+
         .booking-summary {
             background-color: var(--light-pink);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        
+
         .summary-title {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         .summary-item {
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
         }
-        
+
         .summary-label {
             font-weight: 600;
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .iphone-header {
                 padding: 4rem 0 3rem;
             }
-            
+
             .iphone-header h1 {
                 font-size: 2.2rem;
             }
-            
+
             .iphone-img {
                 height: 150px;
             }
-            
+
             .repair-card {
                 margin-bottom: 10px;
             }
-            
+
             .booking-modal-content {
                 margin: 10% auto;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar placeholder -->
     <div id="navbar-container"></div>
@@ -415,11 +420,11 @@
                 <div class="row g-2">
                     <div class="col-md-6">
                         <label for="name" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="row g-2">
                         <div class="col-md-6">
@@ -430,45 +435,50 @@
                             <label for="date" class="form-label">Appointment Date & Time</label>
                             <input type="datetime-local" class="form-control" id="date" name="date" required>
                         </div>
-           
-               <div class="">
-                    <label for="time" class="form-label">Preferred Store</label>
-                    <select class="form-control" id="time" name="time" required>
-                        <option value="">Select a Store</option>
-                        <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
-                        <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
-                        <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
-                        <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE </option>
-                        <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE</option>
-                        <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ </option>
-                        <option value="Smart Tech New Eltham">Smart Tech New Eltham: 407 footscrey road new Eltham SE9 3UL</option>
-                        <option value="Smart Tech New Eltham">Smart Tech Bexley Village: 40 bexley village DA5 1AH</option>
-                    </select>
-                </div>
-                <!-- <div class="">
+
+                        <div class="">
+                            <label for="time" class="form-label">Preferred Store</label>
+                            <select class="form-control" id="time" name="time" required>
+                                <option value="">Select a Store</option>
+                                <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
+                                <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
+                                <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
+                                <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE
+                                </option>
+                                <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE
+                                </option>
+                                <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway,
+                                    Petts Wood, Orpington BR5 1EQ </option>
+                                <option value="Smart Tech New Eltham">Smart Tech New Eltham: 407 footscrey road new
+                                    Eltham SE9 3UL</option>
+                                <option value="Smart Tech New Eltham">Smart Tech Bexley Village: 40 bexley village DA5
+                                    1AH</option>
+                            </select>
+                        </div>
+                        <!-- <div class="">
                     <label for="notes" class="form-label">Additional Notes</label>
                     <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
                 </div> -->
-                <input type="hidden" id="hiddenDevice" name="device">
-                <input type="hidden" id="hiddenPlan" name="plan">
-                <input type="hidden" id="hiddenPrice" name="price">
-                <button type="submit" class="submit-btn">Book Now</button>
+                        <input type="hidden" id="hiddenDevice" name="device">
+                        <input type="hidden" id="hiddenPlan" name="plan">
+                        <input type="hidden" id="hiddenPrice" name="price">
+                        <button type="submit" class="submit-btn">Book Now</button>
             </form>
-            </div>
-            </div>
-            
+        </div>
+    </div>
+
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="js/script.js"></script>
-    
+
     <!-- Main Application Script -->
     <script>
         // iPhone product data with 24 models and 3 repair options for each
         const iphones = {
-           'iphone-16-pro-max': {
-        title: 'iPhone 16 Pro Max',
+            'iphone-16-pro-max': {
+                title: 'iPhone 16 Pro Max',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/Flyerwiz_1735814853204-1536x1536.jpg',
                 options: [
                     {
@@ -503,52 +513,52 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: 'Coming Soon',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: 'Coming Soon',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: 'Coming Soon',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: 'Coming Soon',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: 'Coming Soon',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: 'Coming Soon',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: 'Coming Soon',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: 'Coming Soon',
-                icon: 'bi-hdd'
-            }
-           
+                    {
+                        title: 'Genuine Screen',
+                        price: 'Coming Soon',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: 'Coming Soon',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: 'Coming Soon',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Coming Soon',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Coming Soon',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: 'Coming Soon',
+                        icon: 'bi-hdd'
+                    }
+
                 ]
             },
 
-           'iphone-16-pro': {
-        title: 'iPhone 16 Pro',
+            'iphone-16-pro': {
+                title: 'iPhone 16 Pro',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/Flyerwiz_1735814750068-1536x1536.jpg',
                 options: [
                     {
@@ -583,51 +593,51 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: 'Coming Soon',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: 'Coming Soon',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: 'Coming Soon',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: 'Coming Soon',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: 'Coming Soon',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: 'Coming Soon',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: 'Coming Soon',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: 'Coming Soon',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: 'Coming Soon',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: 'Coming Soon',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: 'Coming Soon',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Coming Soon',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Coming Soon',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: 'Coming Soon',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
 
             'iphone-16-plus': {
-                title: 'iPhone 16 Plus', 
+                title: 'iPhone 16 Plus',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/Flyerwiz_1735814775163-1536x1536.jpg',
                 options: [
                     {
@@ -662,46 +672,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: 'Coming Soon',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: 'Coming Soon',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: 'Coming Soon',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: 'Coming Soon',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: 'Coming Soon',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: 'Coming Soon',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: 'Coming Soon',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: 'Coming Soon',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: 'Coming Soon',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: 'Coming Soon',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: 'Coming Soon',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Coming Soon',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Coming Soon',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: 'Coming Soon',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-16': {
@@ -740,46 +750,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: 'Coming Soon',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: 'Coming Soon',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: 'Coming Soon',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: 'Coming Soon',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: 'Coming Soon',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: 'Coming Soon',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: 'Coming Soon',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: 'Coming Soon',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: 'Coming Soon',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: 'Coming Soon',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: 'Coming Soon',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: 'Coming Soon',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Coming Soon',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Coming Soon',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: 'Coming Soon',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
 
@@ -819,46 +829,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£280',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£75',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£75',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£99',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£30',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£80',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£320',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£280',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£75',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£99',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£30',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£80',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£320',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-15-pro': {
@@ -897,46 +907,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£270',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£75',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£70',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£95',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£30',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£70',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£300',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£270',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£70',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£95',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£30',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£70',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£300',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-15-plus': {
@@ -975,46 +985,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£199',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£70',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£30',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£75',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£60',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£220',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£199',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£70',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£30',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£75',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£60',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£220',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-15': {
@@ -1053,46 +1063,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£199',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£75',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£70',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£60',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£150',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£199',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£70',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£60',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£150',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-14-pro-max': {
@@ -1131,46 +1141,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£240',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£70',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£99',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£60',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£85',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£250',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£240',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£70',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£99',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£60',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£85',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£250',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-14-pro': {
@@ -1209,46 +1219,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£220',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£75',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£70',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£95',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£65',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£80',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£250',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£220',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£70',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£95',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£65',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£80',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£250',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-14-plus': {
@@ -1287,46 +1297,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£160',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£75',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£60',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£80',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£70',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£160',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£60',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£80',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£70',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-14': {
@@ -1365,49 +1375,49 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£130',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£65',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£55',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£85',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£60',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£80',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£50',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£130',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£55',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£85',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£60',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£80',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£50',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
-           'iphone-13-pro-max': {
+            'iphone-13-pro-max': {
                 title: 'iPhone 13 Pro Max',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/Screenshot_21.png',
                 options: [
@@ -1443,46 +1453,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£220',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£80',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£80',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£90',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£70',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£265',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£220',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£80',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£80',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£90',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£70',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£265',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-13-pro': {
@@ -1521,46 +1531,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£210',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£70',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£70',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£70',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£245',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£210',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£70',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£70',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£70',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£245',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-13': {
@@ -1599,46 +1609,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£120',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£65',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£75',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£60',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£32',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£120',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£75',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£60',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£32',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-13-mini': {
@@ -1677,46 +1687,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£120',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£65',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£75',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£65',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£42',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£120',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£75',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£65',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£42',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
 
@@ -1756,46 +1766,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£110',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£55',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£65',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£60',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£30',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£110',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£65',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£60',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£30',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-12-pro': {
@@ -1834,46 +1844,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£90',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£65',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£85',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£30',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£60',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£20',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£85',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£30',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£60',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£20',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-12': {
@@ -1912,46 +1922,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£90',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£65',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£90',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£90',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£70',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£20',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£90',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£90',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£70',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£20',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-12-mini': {
@@ -1990,49 +2000,49 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£80',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£45',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£50',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£75',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£55',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£32',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£50',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£75',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£55',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£32',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
-           'iphone-11-Pro-max': {
+            'iphone-11-Pro-max': {
                 title: 'iPhone 12 Pro Max',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/11promax.png',
                 options: [
@@ -2068,46 +2078,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£90',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£50',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£75',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£50',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£16',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£50',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£75',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£50',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£16',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-11-pro': {
@@ -2146,49 +2156,49 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£80',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£45',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£70',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£30',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£50',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£15',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£70',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£30',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£50',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£15',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
-           'iphone-11': {
+            'iphone-11': {
                 title: 'iPhone 11',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/11.png',
                 options: [
@@ -2224,46 +2234,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£70',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£45',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£60',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£30',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£50',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£15',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£70',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£60',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£30',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£50',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£15',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-se-3': {
@@ -2302,46 +2312,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£50',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£35',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£55',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£45',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£55',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£45',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£10',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£50',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£35',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£55',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£45',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£55',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£45',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£10',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-se-2': {
@@ -2380,46 +2390,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£45',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£35',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£55',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£40',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£30',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£40',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£12',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£45',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£35',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£55',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£30',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£40',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£12',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-xs-max': {
@@ -2458,46 +2468,46 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£80',
-                icon: 'bi-display'
-            },
-            {
-                title: 'Charging Port',
-                price: '£45',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£50',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£45',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£15',
-                icon: 'bi-hdd'
-            }
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£50',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£45',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£15',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
             'iphone-xs': {
@@ -2536,53 +2546,130 @@
                     }
                 ],
                 additionalServices: [
-                {
-                title: 'Genuine Screen',
-                price: '£65',
-                icon: 'bi-display'
+                    {
+                        title: 'Genuine Screen',
+                        price: '£65',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£55',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£40',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£12',
+                        icon: 'bi-hdd'
+                    }
+                ]
             },
-            {
-                title: 'Charging Port',
-                price: '£45',
-                icon: 'bi-lightning-charge'
-            },
-            {
-                title: 'Audio',
-                price: '£45',
-                icon: 'bi-speaker'
-            },
-            {
-                title: 'Cameras',
-                price: '£55',
-                icon: 'bi-camera'
-            },
-            {
-                title: 'Camera Lens',
-                price: '£20',
-                icon: 'bi-camera2'
-            },
-            {
-                title: 'Liquid Diagnostics',
-                price: '£70',
-                icon: 'bi-droplet'
-            },
-            {
-                title: 'Back Glass Replacement',
-                price: '£40',
-                icon: 'bi-phone'
-            },
-            {
-                title: 'Data Recovery',
-                price: '£12',
-                icon: 'bi-hdd'
-            }
+
+            'iphone-xr': {
+                title: 'iPhone XR',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/xr.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£399.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£60',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£45',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£50',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£40',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£40',
+                        icon: 'bi-hdd'
+                    }
                 ]
             },
 
 
 
-
-            
             // ... (other iPhone models with their additional services)
             // Note: For brevity, I've only shown two models with additional services
             // You would add similar additionalServices arrays to all your iPhone models
@@ -2614,7 +2701,7 @@
         function showHomePage() {
             document.title = "iPhone Repairs | Smart Tech";
             window.history.pushState({}, '', '/');
-            
+
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = `
                 <!-- Header -->
@@ -2644,7 +2731,7 @@
                     </div>
                 </main>
             `;
-            
+
             // Animate cards on scroll
             animateCards();
         }
@@ -2653,10 +2740,10 @@
         function showProductDetail(productId) {
             const product = iphones[productId];
             if (!product) return;
-            
+
             document.title = `${product.title} Repairs | Smart Tech`;
             window.history.pushState({}, '', `#${productId}`);
-            
+
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = `
                 <button class="back-btn" onclick="showHomePage()">
@@ -2742,15 +2829,15 @@
             document.getElementById('modalDevice').textContent = device;
             document.getElementById('modalPlan').textContent = plan;
             document.getElementById('modalPrice').textContent = price;
-            
+
             // Set hidden form values
             document.getElementById('hiddenDevice').value = device;
             document.getElementById('hiddenPlan').value = plan;
             document.getElementById('hiddenPrice').value = price;
-            
+
             const modal = document.getElementById('bookingModal');
             modal.style.display = 'block';
-            
+
             // Set minimum date to today
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('date').min = today;
@@ -2764,15 +2851,15 @@
         // Handle booking form submission
         function handleBookingSubmit(event) {
             event.preventDefault();
-            
+
             // Show confirmation
             const plan = document.getElementById('modalPlan').textContent;
             const price = document.getElementById('modalPrice').textContent;
             showBookingAlert(plan, price);
-            
+
             // Submit the form
             event.target.submit();
-            
+
             // Close modal and reset form
             closeBookingModal();
             document.getElementById('bookingForm').reset();
@@ -2805,7 +2892,7 @@
 
             document.body.appendChild(alertBox);
 
-            document.getElementById('closeAlert').addEventListener('click', function() {
+            document.getElementById('closeAlert').addEventListener('click', function () {
                 document.body.removeChild(alertBox);
             });
         }
@@ -2818,19 +2905,19 @@
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             });
-            
-            const animateOnScroll = function() {
+
+            const animateOnScroll = function () {
                 cards.forEach(card => {
                     const cardPosition = card.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.3;
-                    
+
                     if (cardPosition < screenPosition) {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
                     }
                 });
             };
-            
+
             animateOnScroll();
             window.addEventListener('scroll', animateOnScroll);
         }
@@ -2838,7 +2925,7 @@
         // Handle page load and navigation
         function handleNavigation() {
             const hash = window.location.hash.substring(1);
-            
+
             if (hash && iphones[hash]) {
                 showProductDetail(hash);
             } else {
@@ -2847,23 +2934,24 @@
         }
 
         // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             handleNavigation();
-            
+
             // Set up modal event listeners
             document.querySelector('.close-modal').addEventListener('click', closeBookingModal);
             document.getElementById('bookingForm').addEventListener('submit', handleBookingSubmit);
-            
+
             // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
+            window.addEventListener('click', function (event) {
                 const modal = document.getElementById('bookingModal');
                 if (event.target === modal) {
                     closeBookingModal();
                 }
             });
         });
-        
+
         window.addEventListener('popstate', handleNavigation);
     </script>
 </body>
+
 </html>
