@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers | Smart Tech - Device Repair Specialist</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+      <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c10f6b;
+            --secondary-color: #FF138B;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .offer-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .offer-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .offer-badge {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #a00d5c;
+            border-color: #a00d5c;
+        }
+        
+        .service-icon {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .locations {
+            background-color: rgba(193, 15, 107, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .location-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 3rem 0 2rem;
+            }
+            
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+    <!-- Hero Banner -->
+    <header class="hero-banner text-center">
+        <div class="container pt-5">
+            <h1 class="display-5 fw-bold mb-3">Special Repair Offers</h1>
+            <p class="lead mb-4">Quality repairs with guaranteed satisfaction</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <span class="offer-badge"><i class="fas fa-gem me-2"></i>No Fix - No Fee</span>
+                <span class="offer-badge"><i class="fas fa-search me-2"></i>Free Diagnostics</span>
+                <span class="offer-badge"><i class="fas fa-clock me-2"></i>Same Day Service</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mb-5">
+        <!-- Current Offers -->
+        <section class="mb-5">
+            <h2 class="h3 mb-4 text-center">Current Special Offers</h2>
+            <div class="row">
+                <!-- Offer 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card offer-card h-100">
+                        <img src="/Images/offer1.jpg" class="card-img-top offer-img" alt="Smartphone Repair Offer">
+                        <div class="card-body">
+                            <h3 class="h5">Smartphone Repairs</h3>
+                            <ul class="mb-3">
+                                <li>Cracked Screen</li>
+                                <li>Charging Issues</li>
+                                <li>Battery Replacement</li>
+                                <li>Software Issues</li>
+                                <li>Not Turning On</li>
+                                <li>Logic Board Issues</li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="offer-badge">100% Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card offer-card h-100">
+                        <img src="/Images/offer2.jpg" class="card-img-top offer-img" alt="Laptop Repair Offer">
+                        <div class="card-body">
+                            <h3 class="h5">Laptop Repairs</h3>
+                            <ul class="mb-3">
+                                <li>Motherboard Repair</li>
+                                <li>Speaker Replacement</li>
+                                <li>Airport Card Replacement</li>
+                                <li>RAM/Memory Upgrade</li>
+                                <li>Storage Upgrade</li>
+                                <li>Keyboard Replacement</li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="offer-badge">Same Day Service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card offer-card h-100">
+                        <img src="/Images/offer4.jpeg" class="card-img-top offer-img" alt="Student Discount Offer">
+                        <div class="card-body">
+                            <h3 class="h5">Student Discount</h3>
+                            <div class="text-center mb-3">
+                                <span class="display-6 text-primary fw-bold">20% OFF</span>
+                                <p class="small">For all students with valid ID</p>
+                            </div>
+                            <ul class="mb-3">
+                                <li>LCD Replacement</li>
+                                <li>Battery Replacement</li>
+                                <li>Water Damage Repair</li>
+                                <li>Data Recovery</li>
+                                <li>Audio Issues</li>
+                                <li>Charging Problems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card offer-card h-100">
+                        <img src="/Images/offer4.jpeg" class="card-img-top offer-img" alt="PC Repair Offer">
+                        <div class="card-body">
+                            <h3 class="h5">PC & Laptop Repairs</h3>
+                            <div class="text-center mb-3">
+                                <span class="display-6 text-primary fw-bold">UP TO 50% OFF</span>
+                            </div>
+                            <ul class="mb-3">
+                                <li>Display Repair</li>
+                                <li>Slow Computer</li>
+                                <li>Password Recovery</li>
+                                <li>Liquid Damage</li>
+                                <li>Virus Removal</li>
+                                <li>Hardware Issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Highlights -->
+        <section class="row mb-5">
+            <div class="col-lg-4 mb-4">
+                <div class="text-center p-4 h-100">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="h4">Lifetime Warranty</h3>
+                    <p>We stand behind our repairs with a lifetime warranty on all work performed.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="text-center p-4 h-100">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="h4">Express Repairs</h3>
+                    <p>Most repairs completed the same day while you wait or within 24 hours.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="text-center p-4 h-100">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="h4">Quality Parts</h3>
+                    <p>We use only premium quality, manufacturer-approved replacement parts.</p>
+                </div>
+            </div>
+        </section>
+        </main>
+      <!-- Footer Container -->
+<div id="footer-container"></div>  
+        
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+<!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storelocation.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+        
+        // Booking form handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const serviceType = document.getElementById('serviceType').value;
+            const location = document.getElementById('bookingLocation').value;
+            
+            if (!serviceType || !location) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate booking submission
+            setTimeout(() => {
+                alert('Thank you! Your repair booking has been received. We will contact you shortly to confirm your appointment.');
+                document.getElementById('bookingForm').reset();
+            }, 500);
+        });
+        });
+        
+        // Animate offer cards on scroll
+        const offerCards = document.querySelectorAll('.offer-card');
+        
+        offerCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    </script>
+</body>
+</html>

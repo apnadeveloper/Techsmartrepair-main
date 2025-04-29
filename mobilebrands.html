@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brands We Repair | SmartTech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF138B;
+      --primary-hover: #c10f6b;
+      --dark: #212529;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fafafa;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
+    .brands-section {
+      padding: 3rem 0;
+    }
+    
+    .brand-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      height: auto;
+      background: white;
+      position: relative;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    .brand-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    
+    .brand-logo-container {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .brand-logo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .brand-card:hover .brand-logo {
+      transform: scale(1.1);
+    }
+    
+    .brand-content {
+      padding: 0 1rem;
+    }
+    
+    .brand-title {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      padding: 0.5rem 1.25rem;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-section {
+      background-color: var(--dark);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .cta-title {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-subtitle {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: 767.98px) {
+      .hero-section {
+        padding: 3rem 0;
+      }
+      
+      .section-header {
+        margin-bottom: 2rem;
+      }
+      
+      .brand-logo-container {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Brands Section -->
+  <section class="brands-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Mobile Phones Brands We Repair</h2>
+        <p class="section-subtitle">We use genuine or high-quality replacement parts for all these brands</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Apple -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Apple</h3>
+              
+              <a href="/iphones.html" class="btn btn-primary">Repair Apple Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Samsung -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Samsung</h3>
+              <!-- <p>Galaxy phones, tablets, watches, and laptops</p> -->
+              <a href="/samsung.html" class="btn btn-primary">Repair Samsung Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Google -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="brand-logo" style="width: 70%;">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Google</h3>
+              <!-- <p>Pixel phones, Pixel Watch, Pixel Tablet</p> -->
+              <a href="/google.html" class="btn btn-primary">Repair Google Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Huawei -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="data:image/png;base64,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" alt="Huawei" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Huawei</h3>
+              <!-- <p>Huawei phones, tablets, and laptops</p> -->
+              <a href="/huawei.html" class="btn btn-primary">Repair Huawei Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- OnePlus -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://images.seeklogo.com/logo-png/37/2/oneplus-logo-png_seeklogo-372201.png" alt="OnePlus" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">OnePlus</h3>
+              <!-- <p>OnePlus phones and accessories</p> -->
+              <a href="/oneplus.html" class="btn btn-primary">Repair OnePlus Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Oppo -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://static.vecteezy.com/system/resources/previews/020/336/423/non_2x/oppo-logo-oppo-icon-free-free-vector.jpg" alt="Oppo" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Oppo</h3>
+              <!-- <p>Oppo phones and accessories</p> -->
+              <a href="/oppo.html" class="btn btn-primary">Repair Oppo Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Xiaomi -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://logos-download.com/wp-content/uploads/2016/05/Xiaomi_Logo_2019.png" alt="Xiaomi" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Xiaomi</h3>
+              <!-- <p>Xiaomi, Redmi, and POCO devices</p> -->
+              <a href="/xiaomi.html" class="btn btn-primary">Repair Xiaomi Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Nokia -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Nokia_-_2005_logo.svg" alt="Nokia" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Nokia</h3>
+              <!-- <p>Nokia smartphones and feature phones</p> -->
+              <a href="/nokia.html" class="btn btn-primary">Repair Nokia Device</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Motorola -->
+        <div class="col-md-6 col-lg-4">
+          <div class="brand-card">
+            <!-- <div class="brand-logo-container">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMwxALF5vO7kuVEdrfdC-7RV6KDUBS7oJ6dA&s" alt="Motorola" class="brand-logo">
+            </div> -->
+            <div class="brand-content">
+              <h3 class="brand-title">Motorolla</h3>
+              <!-- <p>Moto phones and accessories</p> -->
+              <a href="/motorola.html" class="btn btn-primary">Repair Motorolla Device</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h3 class="cta-title">Don't see your brand listed?</h3>
+      <p class="cta-subtitle">We repair many more brands - contact us to check if we can help with your device.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html" class="btn btn-primary px-4">Book Online</a>
+        <a href="tel:07564044441" class="btn btn-outline-light px-4">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  <!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="brands.html">Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+    });
+  </script>
+</body>
+</html>

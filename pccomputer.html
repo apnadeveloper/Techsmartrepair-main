@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC & Computer Repairs | Smart Tech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+   
+    <style>
+        :root {
+            --primary-color: #FF138B; /* Bright pink */
+            --secondary-color: #c10f6b; /* Darker pink */
+            --light-pink: #ffebf6; /* Light pink background */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .pc-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pc-header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .pc-header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -30px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        /* Product Card Styles */
+        .pc-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .pc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 19, 139, 0.15);
+        }
+        
+        .pc-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+            background-color: var(--light-color);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+        }
+        
+        /* Repair Detail Page Styles */
+        .repair-section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .repair-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .repair-header h2 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .repair-header h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .repair-card {
+            background: var(--light-pink);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            margin-top: 50px;
+        }
+        
+        .repair-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 19, 139, 0.15);
+        }
+        
+        .repair-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .repair-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .spec-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .spec-value {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .highlight-card {
+            border: 2px solid var(--secondary-color);
+            position: relative;
+            background-color: var(--light-pink);
+        }
+        
+        .highlight-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255, 19, 139, 0.3);
+        }
+        
+        /* Back Button */
+        .back-btn {
+            margin-bottom: 30px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Additional Services Styles */
+        .additional-services {
+            margin-top: 50px;
+            padding: 30px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 19, 139, 0.1);
+        }
+        
+        .service-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .btn-add-to-cart {
+            background: #c10f6b;
+            color:white;
+            border: 1px solid var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-to-cart:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            overflow-y: auto;
+        }
+        
+        .booking-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(255, 19, 139, 0.3);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .form-label {
+            font-weight: 600;
+        }
+        
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+            transform: translateY(-2px);
+        }
+        
+        .booking-summary {
+            background-color: var(--light-pink);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .summary-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .pc-header {
+                padding: 4rem 0 3rem;
+            }
+            
+            .pc-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .pc-img {
+                height: 150px;
+            }
+            
+            .repair-card {
+                margin-bottom: 20px;
+            }
+            
+            .booking-modal-content {
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content Area -->
+    <div id="main-content" class="container">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Book Your Repair</h3>
+            </div>
+            <div class="booking-summary">
+                <h5 class="summary-title">Repair Summary</h5>
+                <div class="summary-item">
+                    <span class="summary-label">Device:</span>
+                    <span id="modalDevice">Alienware Aurora R15</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Repair Plan:</span>
+                    <span id="modalPlan">Premium Hardware Repair</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Price:</span>
+                    <span id="modalPrice">£299.00</span>
+                </div>
+            </div>
+            <form id="bookingForm" action="https://formsubmit.co/info@techsmartrepair.co.uk" method="POST">
+                <input type="hidden" name="_subject" value="New iPad Repair Booking">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Appointment Date & Time</label>
+                            <input type="datetime-local" class="form-control" id="date" name="date" required>
+                        </div>
+           
+               <div class="">
+                    <label for="time" class="form-label">Preferred Store</label>
+                    <select class="form-control" id="time" name="time" required>
+                        <option value="">Select a Store</option>
+                        <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
+                        <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
+                        <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
+                        <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE </option>
+                        <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE</option>
+                        <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ </option>
+                        <option value="Smart Tech New Eltham">Smart Tech New Eltham: 407 footscrey road new Eltham SE9 3UL</option>
+                        <option value="Smart Tech New Eltham">Smart Tech Bexley Village: 40 bexley village DA5 1AH</option>
+                    </select>
+                </div>
+                <!-- <div class="">
+                    <label for="notes" class="form-label">Additional Notes</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                </div> -->
+                <input type="hidden" id="hiddenDevice" name="device">
+                <input type="hidden" id="hiddenPlan" name="plan">
+                <input type="hidden" id="hiddenPrice" name="price">
+                <button type="submit" class="submit-btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Custom JS -->
+     <script src="js/script.js"></script>
+    <!-- Main Application Script -->
+    <script>
+        // PC product data with 12 models and 3 repair options for each
+        const pcs = {
+            'alienware-aurora-r15': {
+                title: 'Alienware Aurora R15',
+                image: 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/desktops/alienware-desktops/alienware-aurora-r15/media-gallery/black/desktop-aw-aurora-r15-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&wid=4000&hei=4000&qlt=100,0&resMode=sharp2&size=4000,4000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£299.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£399.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Dell Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'hp-omen-45l': {
+                title: 'HP Omen 45L',
+                image: 'https://www.hp.com/gb-en/shop/Html/Merch/Images/c08285146_1750x1285.jpg',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£289.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£389.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'HP Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'lenovo-legion-tower-7i': {
+                title: 'Lenovo Legion Tower 7i',
+                image: 'https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MTYwMTk2fGltYWdlL3BuZ3xoYjYvaDg1LzEwNTk1MjQ0NjE4ODQ2LnBuZ3wzYzM1YzY3YjYxYzU1ZDM3YjY2YjQxYjQ2YjVhY2YxOGU0NTU3Y2U1YzQ1ZDMxYzFkYjA1YzUxYzQxYjQ0',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£179.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£379.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Lenovo Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'asus-rog-strix-g16': {
+                title: 'ASUS ROG Strix G16',
+                image: 'https://dlcdnwebimgs.asus.com/gain/5E1F1A1F-0F3D-4B5D-9B1D-5C2E5F1A1F1D',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£169.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£269.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£369.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'ASUS Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'msi-triforce-aegis-ti5': {
+                title: 'MSI Triforce Aegis Ti5',
+                image: 'https://asset.msi.com/resize/image/global/product/product_9_20230612141703_6486f25f7f5b0.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£159.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£259.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£359.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'MSI Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'corsair-vengeance-i8100': {
+                title: 'Corsair Vengeance i8100',
+                image: 'https://www.corsair.com/corsairmedia/sys_master/productcontent/CH-9129011-NA-VENGEANCE_a7200_hero.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£149.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£249.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£349.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Corsair Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'dell-xps-desktop': {
+                title: 'Dell XPS Desktop',
+                image: 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/desktops/xps-desktops/xps-8960/media-gallery/desktop-xps-8960-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&wid=4000&hei=4000&qlt=100,0&resMode=sharp2&size=4000,4000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£139.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£239.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£339.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Dell Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'hp-pavilion-tp01': {
+                title: 'HP Pavilion TP01',
+                image: 'https://www.hp.com/gb-en/shop/Html/Merch/Images/c07962496_1750x1285.jpg',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£129.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£329.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'HP Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'lenovo-ideacentre-5i': {
+                title: 'Lenovo IdeaCentre 5i',
+                image: 'https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MTYwMTk2fGltYWdlL3BuZ3xoYjYvaDg1LzEwNTk1MjQ0NjE4ODQ2LnBuZ3wzYzM1YzY3YjYxYzU1ZDM3YjY2YjQxYjQ2YjVhY2YxOGU0NTU3Y2U1YzQ1ZDMxYzFkYjA1YzUxYzQxYjQ0',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£119.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£219.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£319.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Lenovo Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'acer-aspire-tc': {
+                title: 'Acer Aspire TC',
+                image: 'https://static.acer.com/up/Resource/Acer/Laptops/Aspire_TC/Image/20220314/Aspire-TC-1750-3.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£109.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£209.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£309.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Acer Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'asus-vivomini': {
+                title: 'ASUS VivoMini',
+                image: 'https://dlcdnwebimgs.asus.com/gain/5E1F1A1F-0F3D-4B5D-9B1D-5C2E5F1A1F1D',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£99.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£299.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'ASUS Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'intel-nuc-13': {
+                title: 'Intel NUC 13',
+                image: 'https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-02/nuc-13-pro-kit-vpro-16x9.png.rendition.intel.web.480.270.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£89.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '2-3 Days'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£289.00',
+                        specs: {
+                            'Repair Type': 'Hardware Repair',
+                            'Quality': 'Intel Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            }
+        };
+
+        // Additional services data
+        const additionalServices = [
+            {
+                title: 'Motherboard Repair',
+                price: '£150',
+                icon: 'bi-motherboard'
+            },
+            {
+                title: 'Power Supply',
+                price: '£80',
+                icon: 'bi-plug'
+            },
+            {
+                title: 'Graphics Card',
+                price: '£120',
+                icon: 'bi-gpu-card'
+            },
+            {
+                title: 'RAM Upgrade',
+                price: '£60',
+                icon: 'bi-memory'
+            },
+            {
+                title: 'SSD Installation',
+                price: '£50',
+                icon: 'bi-device-hdd'
+            },
+            {
+                title: 'Liquid Cooling',
+                price: '£100',
+                icon: 'bi-fan'
+            },
+            {
+                title: 'OS Installation',
+                price: '£40',
+                icon: 'bi-windows'
+            },
+            {
+                title: 'Data Recovery',
+                price: '£200',
+                icon: 'bi-hdd'
+            },
+            {
+                title: 'Virus Removal',
+                price: '£60',
+                icon: 'bi-shield'
+            }
+        ];
+
+        // Show homepage with all PCs
+        function showHomePage() {
+            document.title = "PC & Computer Repairs | Smart Tech";
+            window.history.pushState({}, '', '/');
+            
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <!-- Header -->
+                <header class="pc-header text-center">
+                    <div class="container position-relative">
+                        <h1 class="display-4 fw-bold mb-3">PC & Computer Repairs</h1>
+                        <p class="lead mb-0">Expert repairs for all desktop computers</p>
+                    </div>
+                </header>
+
+                <!-- Product Grid -->
+                <main class="container mb-5">
+                    <div class="row">
+                        ${Object.entries(pcs).map(([id, product]) => `
+                            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="pc-card h-100">
+                                    <img src="${product.image}" class="pc-img" alt="${product.title}">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5 mb-3">${product.title}</h3>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" onclick="showProductDetail('${id}')">View Options</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </main>
+            `;
+            
+            // Animate cards on scroll
+            animateCards();
+        }
+
+        // Show product detail page
+        function showProductDetail(productId) {
+            const product = pcs[productId];
+            if (!product) return;
+            
+            document.title = `${product.title} Repairs | Smart Tech`;
+            window.history.pushState({}, '', `#${productId}`);
+            
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <button class="back-btn" onclick="showHomePage()">
+                    <i class="fas fa-arrow-left me-2"></i>Back to All Computers
+                </button>
+                
+                <div class="repair-section">
+                    <div class="repair-header">
+                        <h2>${product.title}</h2>
+                        <h3>Hardware Repair</h3>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Specifications Column -->
+                        <div class="col-md-3">
+                            <div class="repair-card border-0" style="background-color: #ffffff; box-shadow: none;">
+                                <div class="repair-title mb-5 pt-3">
+                                    <p class="fw-bold" style="color:var(--primary-color);">${product.title} <br>Hardware Repair</p>
+                                </div>
+
+                                ${Object.keys(product.options[0].specs).map(spec => `
+                                    <div class="spec-item">
+                                        <div class="spec-value fw-bold">${spec}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- Product Options -->
+                        ${product.options.map((option, index) => `
+                            <div class="col-md-3">
+                                <div class="repair-card ${index === 2 ? 'highlight-card' : ''}" 
+                                    style="background-color: ${index === 2 ? 'var(--light-pink)' : '#ffffff'};">
+                                    ${index === 2 ? '<div class="highlight-badge">Popular</div>' : ''}
+                                    <div class="repair-title">${option.name}</div>
+                                    <div class="repair-price">${option.price}</div>
+                                    
+                                    ${Object.values(option.specs).map(value => `
+                                        <div class="spec-item">
+                                            <div class="spec-value">${value}</div>
+                                        </div>
+                                    `).join('')}
+                                    
+                                    <button class="btn btn-primary mt-3 px-4 btn-book" 
+                                        onclick="openBookingModal('${product.title}', '${option.name} Hardware Repair', '${option.price}')">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Additional Services Section -->
+                    <div class="additional-services">
+                        <h3 class="text-center mb-4" style="color: var(--primary-color);">Additional Services</h3>
+                        <div class="row">
+                            ${additionalServices.map(service => `
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="service-card">
+                                        <div class="service-title">
+                                            <i class="bi ${service.icon} service-icon"></i>
+                                            ${service.title}
+                                        </div>
+                                        <div class="service-price">${service.price}</div>
+                                        <button class="btn btn-add-to-cart w-100" 
+                                            onclick="openBookingModal('Additional Service', '${service.title}', '${service.price}')">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Open booking modal with specific product details
+        function openBookingModal(device, plan, price) {
+            document.getElementById('modalDevice').textContent = device;
+            document.getElementById('modalPlan').textContent = plan;
+            document.getElementById('modalPrice').textContent = price;
+            
+            // Set hidden form values
+            document.getElementById('hiddenDevice').value = device;
+            document.getElementById('hiddenPlan').value = plan;
+            document.getElementById('hiddenPrice').value = price;
+            
+            const modal = document.getElementById('bookingModal');
+            modal.style.display = 'block';
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        }
+
+        // Close booking modal
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Handle booking form submission
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            // Show confirmation
+            const plan = document.getElementById('modalPlan').textContent;
+            const price = document.getElementById('modalPrice').textContent;
+            showBookingAlert(plan, price);
+            
+            // Submit the form
+            event.target.submit();
+            
+            // Close modal and reset form
+            closeBookingModal();
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Show booking confirmation alert
+        function showBookingAlert(planTitle, price) {
+            const alertBox = document.createElement('div');
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '50%';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.backgroundColor = 'white';
+            alertBox.style.padding = '30px';
+            alertBox.style.borderRadius = '10px';
+            alertBox.style.boxShadow = '0 5px 25px rgba(255, 19, 139, 0.3)';
+            alertBox.style.zIndex = '1000';
+            alertBox.style.textAlign = 'center';
+            alertBox.style.maxWidth = '400px';
+            alertBox.style.width = '90%';
+
+            alertBox.innerHTML = `
+                <h4 style="color: var(--primary-color); margin-bottom: 20px;">Booking Confirmation</h4>
+                <p>You've selected the <strong>${planTitle}</strong> plan for ${price}.</p>
+                <p style="margin-bottom: 25px;">Our team will contact you shortly to confirm your appointment.</p>
+                <button id="closeAlert" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+                    color: white; border: none; padding: 10px 25px; border-radius: 5px; 
+                    cursor: pointer; font-weight: 600;">Continue</button>
+            `;
+
+            document.body.appendChild(alertBox);
+
+            document.getElementById('closeAlert').addEventListener('click', function() {
+                document.body.removeChild(alertBox);
+            });
+        }
+
+        // Animate cards on scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.pc-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            const animateOnScroll = function() {
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (cardPosition < screenPosition) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        }
+
+        // Handle page load and navigation
+        function handleNavigation() {
+            const hash = window.location.hash.substring(1);
+            
+            if (hash && pcs[hash]) {
+                showProductDetail(hash);
+            } else {
+                showHomePage();
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            handleNavigation();
+            
+            // Set up modal event listeners
+            document.querySelector('.close-modal').addEventListener('click', closeBookingModal);
+            document.getElementById('bookingForm').addEventListener('submit', handleBookingSubmit);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('bookingModal');
+                if (event.target === modal) {
+                    closeBookingModal();
+                }
+            });
+        });
+        
+        window.addEventListener('popstate', handleNavigation);
+    </script>
+</body>
+</html>

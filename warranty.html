@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Warranty | Smart Tech Ltd</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #c10f6b;
+            --secondary-color: #FF138B;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .warranty-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0 3rem;
+        }
+        
+        .warranty-card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .warranty-icon {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #a00d5c;
+            border-color: #a00d5c;
+        }
+        
+        .warranty-note {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        
+        .warranty-alert {
+            background-color: rgba(193, 15, 107, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .warranty-period {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .warranty-header {
+                padding: 3rem 0 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+    <!-- Header -->
+    <header class="warranty-header">
+        <div class="container text-center pt-5">
+            <h1 class="display-5 fw-bold mb-3">Device Warranty Terms</h1>
+            <p class="lead mb-0">Protection policies for your devices</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row">
+            <!-- Repair Warranty Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="card warranty-card h-100">
+                    <div class="card-body">
+                        <div class="warranty-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h2 class="h4 mb-3">Repair Warranty Terms</h2>
+                        
+                        <div class="warranty-alert">
+                            <p class="mb-0"><strong>Important:</strong> Test your device before leaving our premises. Warranty void for physical damage, liquid damage, or 3rd party repair attempts.</p>
+                        </div>
+                        
+                        <ul class="mb-3">
+                            <li class="mb-2">SIM cards, memory cards, and phone cases remain customer's responsibility</li>
+                            <li class="mb-2"><span class="warranty-period">100 days</span> repair warranty</li>
+                            <li class="mb-2">No warranty for water damage repairs</li>
+                            <li class="mb-2">Data backup is customer's responsibility (contacts, photos, etc. may be lost)</li>
+                            <li class="mb-2">Manufacturer repairs may extend repair time</li>
+                            <li class="mb-2">Provide device password to avoid repair delays</li>
+                            <li class="mb-2">Additional faults found during repair may incur extra costs</li>
+                            <li>Test device upon collection - Smart Tech not responsible for unrelated faults</li>
+                        </ul>
+                        
+                        <div class="warranty-note">
+                            <p class="mb-0">By proceeding with repair, you acknowledge and accept these warranty terms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Device Sales Warranty Section -->
+            <div class="col-lg-6 mb-4">
+                <div class="card warranty-card h-100">
+                    <div class="card-body">
+                        <div class="warranty-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h2 class="h4 mb-3">Device Sales Warranty</h2>
+                        
+                        <div class="warranty-alert">
+                            <p class="mb-0"><i class="fas fa-receipt me-2"></i><strong>Keep your receipt as proof of purchase</strong></p>
+                        </div>
+                        
+                        <h3 class="h5 mt-3">New Devices</h3>
+                        <ul class="mb-3">
+                            <li class="mb-2"><span class="warranty-period">14 days</span> exchange policy if faulty</li>
+                            <li class="mb-2"><span class="warranty-period">24 months</span> manufacturer warranty</li>
+                            <li class="mb-2">Excludes third-party software issues</li>
+                            <li class="mb-2">Excludes accidental damage (water damage, broken screens, etc.)</li>
+                            <li>Third-party repairs void warranty</li>
+                        </ul>
+                        
+                        <h3 class="h5 mt-3">Pre-Owned Devices</h3>
+                        <ul>
+                            <li class="mb-2"><span class="warranty-period">3 months</span> battery warranty from purchase date</li>
+                            <li class="mb-2">Excludes LCD damage, cracks, smashes, faulty touch screens, pixel damage</li>
+                            <li class="mb-2">Excludes faulty fingerprint/iris sensors, Face ID recognition</li>
+                            <li>Manufacturer repairs may take up to 4 weeks</li>
+                        </ul>
+                        
+                        <div class="warranty-note">
+                            <p class="mb-0">I confirm the device was tested and fully working at time of purchase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Warranty Check Section -->
+        <div class="row mt-2">
+            <div class="col-lg-6 mb-4">
+                <div class="card warranty-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Check Your Repair Status</h2>
+                        <form id="repairStatusForm">
+                            <div class="mb-3">
+                                <label for="repairNumber" class="form-label">Repair Ticket Number</label>
+                                <input type="text" class="form-control" id="repairNumber" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customerPhone" class="form-label">Your Phone Number</label>
+                                <input type="tel" class="form-control" id="customerPhone" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Check Status</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card warranty-card">
+                    <div class="card-body">
+                        <div class="warranty-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h2 class="h4 mb-3">Warranty Support</h2>
+                        <p>Have questions about your warranty coverage or need to make a claim?</p>
+                        
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-phone-alt me-2"></i> Call Support
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-envelope me-2"></i> Email Us
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-map-marker-alt me-2"></i> Visit Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Important Notes Section -->
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card warranty-card">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Important Warranty Notes</h2>
+                        <div class="alert alert-warning">
+                            <h3 class="h5"><i class="fas fa-exclamation-triangle me-2"></i> Warranty Void Conditions</h3>
+                            <ul class="mb-0">
+                                <li>Any physical damage to the device</li>
+                                <li>Liquid damage of any kind</li>
+                                <li>Unauthorized repair attempts by third parties</li>
+                                <li>Removal or defacement of warranty seals</li>
+                                <li>Use with non-approved accessories</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <h3 class="h5"><i class="fas fa-info-circle me-2 text-primary"></i> Before Service Checklist</h3>
+                            <ol>
+                                <li class="mb-2">Back up all personal data</li>
+                                <li class="mb-2">Remove SIM and memory cards</li>
+                                <li class="mb-2">Note your device password</li>
+                                <li class="mb-2">Test all functions before service</li>
+                                <li>Keep your receipt safe</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer Container -->
+<div id="footer-container"></div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storelocation.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+   
+        // Repair status form handler
+        document.getElementById('repairStatusForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const repairNumber = document.getElementById('repairNumber').value;
+            const customerPhone = document.getElementById('customerPhone').value;
+            
+            if (!repairNumber || !customerPhone) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate checking repair status
+            setTimeout(() => {
+                alert('Repair status request received. Our team will contact you shortly with an update.');
+                document.getElementById('repairStatusForm').reset();
+            }, 500);
+        });
+        
+        // Animate warranty cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.warranty-card');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+        });
+    </script>
+</body>
+</html>

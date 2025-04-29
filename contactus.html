@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | SmartTech</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary: #FF138B;
+      --primary-hover: #c10f6b;
+      --dark: #212529;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fafafa;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255,19,139,0.08) 0%, rgba(255,255,255,1) 100%);
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .contact-section {
+      padding: 4rem 0;
+    }
+    
+    .contact-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      background: white;
+      height: 100%;
+      padding: 2.5rem;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .contact-info-card {
+      background-color: rgba(255, 19, 139, 0.03);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: rgba(255, 19, 139, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon i {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    
+    .contact-method {
+      margin-bottom: 2rem;
+    }
+    
+    .contact-method h4 {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+    
+    .contact-method p {
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-method a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-method a:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+    
+    .form-control, .form-select, textarea.form-control {
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+      padding: 0.75rem 1rem;
+    }
+    
+    .form-control:focus, .form-select:focus, textarea.form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 19, 139, 0.3);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .map-container {
+      height: 300px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 2rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .map-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    @media (max-width: 991.98px) {
+      .contact-section {
+        padding: 3rem 0;
+      }
+      
+      .contact-card {
+        margin-bottom: 2rem;
+      }
+      
+      .section-header {
+        margin-bottom: 2rem;
+      }
+    }
+    
+    @media (max-width: 767.98px) {
+      .hero-section {
+        padding: 3rem 0 2rem;
+      }
+      
+      .contact-card {
+        padding: 1.5rem;
+      }
+      
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="display-5 fw-bold mb-3">Contact SmartTech</h1>
+          <p class="lead mb-4">We're here to help with all your device repair needs. Reach out to us anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Our team is ready to assist you with any questions or repair needs.</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Contact Info -->
+        <div class="col-lg-5">
+          <div class="contact-card contact-info-card h-100">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+              <h4>Call Us</h4>
+              <p>Speak directly with our support team</p>
+              <p><a href="tel:07564044441">0756 404 4441</a></p>
+              <p>Monday - Friday: 8am - 8pm</p>
+              <p>Saturday: 9am - 6pm</p>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <h4>Email Us</h4>
+              <p>Send us your questions and we'll respond quickly</p>
+              <p><a href="mailto:info@smarttech.com">info@smarttech.com</a></p>
+              <p>Response time: Typically within 2 hours</p>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <h4>Visit Us</h4>
+              <p>Find your nearest SmartTech repair center</p>
+              <p>46 Sidcup High Street, DA14 6EH</p>
+              <p>(Opposite to Poundland)</p>
+              <a href="storelocation.html" class="btn btn-outline-primary mt-2">View All Locations</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="contact-card h-100">
+            <h3 class="mb-4">Send Us a Message</h3>
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                    <label for="subject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" id="message" placeholder="Your Message" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+              </div>
+            </form>
+            
+            <div class="map-container mt-4">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.107123456789!2d0.106812315674789!3d51.4256789123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a7a9c9c9c9c9%3A0x1e3b9d7f8f9b1e1!2s46%20Sidcup%20High%20Street%2C%20Sidcup%20DA14%206EH!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" allowfullscreen="" title="Google Maps showing the location of 46 Sidcup High Street, DA14 6EH"></iframe>
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const iframe = document.querySelector('.map-iframe');
+                  if ('loading' in HTMLIFrameElement.prototype) {
+                    iframe.setAttribute('loading', 'lazy');
+                  } else {
+                    const observer = new IntersectionObserver((entries, observer) => {
+                      entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                          iframe.src = iframe.getAttribute('src');
+                          observer.disconnect();
+                        }
+                      });
+                    });
+                    observer.observe(iframe);
+                  }
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storelocation.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contactus.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+      
+      // Form submission handler
+      document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Show success message
+        alert('Your message has been sent successfully! We will contact you soon.');
+        this.reset();
+      });
+    });
+  </script>
+</body>
+</html>

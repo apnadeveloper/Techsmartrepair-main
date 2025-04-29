@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Locations | SmartTech</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary: #FF138B;
+      --primary-hover: #c10f6b;
+      --dark: #212529;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fafafa;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255,19,139,0.08) 0%, rgba(255,255,255,1) 100%);
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .locations-section {
+      padding: 3rem 0;
+    }
+    
+    .location-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      background: white;
+      height: 100%;
+    }
+    
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    .location-img-container {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .location-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    
+    .location-card:hover .location-img {
+      transform: scale(1.05);
+    }
+    
+    .location-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .location-content {
+      padding: 1.5rem;
+    }
+    
+    .location-title {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .location-info {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .location-info li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      color: #555;
+      font-size: 1rem;
+    }
+    
+    .location-info i {
+      color: var(--primary);
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+      min-width: 20px;
+      margin-top: 3px;
+    }
+    
+    .btn-location {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .btn-location:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 19, 139, 0.3);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      font-size: 2rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 1rem auto 0;
+    }
+    
+    .map-container {
+      height: 250px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .map-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .opening-hours {
+      background-color: rgba(255, 19, 139, 0.05);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .opening-hours h5 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .opening-hours ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    
+    .opening-hours li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 1rem;
+    }
+    
+    .opening-hours .day {
+      font-weight: 500;
+    }
+    
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    
+    @media (max-width: 991.98px) {
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 767.98px) {
+      .hero-section {
+        padding: 3rem 0 2rem;
+      }
+      
+      .section-header {
+        margin-bottom: 2rem;
+      }
+      
+      .location-img-container {
+        height: 180px;
+      }
+      
+      .map-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Locations Section -->
+  <section class="locations-section mt-5">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Find a Store Near You</h2>
+        <p class="section-subtitle">All our locations offer the same high-quality service and repairs.</p>
+      </div>
+      
+      <div class="locations-grid">
+        <!-- Row 1 -->
+        <!-- London -->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/SIDCUP BRANCH.jpg" alt="London Store" class="img-fluid">
+                      </div>
+          <div class="location-content">
+            <h3 class="location-title">
+              SIDCUP BRANCH</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 46 Sidcup High Street, DA14 6EH (Opposite to Poundland)</li>
+              <li><i class="bi bi-telephone-fill"></i>07564044441</li>
+              <li><i class="bi bi-envelope-fill"></i> smarttechsidcup@gmail.com</li>
+            </ul>
+                       
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.761424169832!2d0.09898408466956836!3d51.4258090439484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ac0360794a59%3A0x23ff0ebb9de21f68!2s46%20High%20St%2C%20Sidcup%20DA14%206EH%2C%20UK!5e0!3m2!1sen!2s!4v1744444805831!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <!-- <a href="https://maps.google.com?q=123+Tech+Street,+London,+W1T+1AB" target="_blank" rel="noopener" class="btn btn-location mt-3">
+              <i class="bi bi-map"></i> Get Directions
+            </a> -->
+          </div>
+        </div>
+        
+        <!-- Manchester -->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/ELTHAM BRANCH.jpg" alt="Manchester Store" class="img-fluid">
+          </div>
+          <div class="location-content">
+            <h3 class="location-title">ELTHAM BRANCH</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 158 Eltham High Street, SE9 1BJ (Opposite to Lidl)</li>
+              <li><i class="bi bi-telephone-fill"></i>07377772799</li>
+              <li><i class="bi bi-envelope-fill"></i> 
+                smarttechcoffee@gmail.com</li>
+            </ul> 
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19891.278848024787!2d0.017643174316397815!3d51.45063099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a96e5a3039cb%3A0x1f10676dbec636c3!2sSmart%20Tech%20Coffee!5e0!3m2!1sen!2s!4v1744444992776!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Row 2 -->
+        <!-- Birmingham -->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/CHISLEHURST BRANCH.jpg" alt="Birmingham Store" class="img-fluid">
+          </div>
+          <div class="location-content">
+            <h3 class="location-title">CHISLEHURST BRANCH</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 21 Park, Road BR7 5AY (Opposite Ark Veterinary)</li>
+              <li><i class="bi bi-telephone-fill"></i> 
+                07377772796</li>
+              <li><i class="bi bi-envelope-fill"></i> 
+                smarttechchislehurst@gmail.com</li>
+            </ul>        
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.1337796245552!2d0.0653929756994659!3d51.41896911716072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8abc2e6481b87%3A0x57a90b8bbc37a17b!2sArk%20Veterinary%20Clinic!5e0!3m2!1sen!2s!4v1744445175850!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Edinburgh -->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/BEXELEYHEATH BRANCH.jpg" alt="Edinburgh Store" class="img-fluid">
+          </div>
+          <div class="location-content">
+            <h3 class="location-title">BEXELEYHEATH BRANCH</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 
+                96A Broadway, Bexleyheath DA6 7DE (Opposite to Starbucks)</li>
+              <li><i class="bi bi-telephone-fill"></i>07985500008</li>
+              <li><i class="bi bi-envelope-fill"></i>smarttechbexleyheath@gmail.com</li>
+            </ul>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4972.153342413127!2d0.13768984412034802!3d51.45674872241962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8afb6da4a6e15%3A0x7968193a161c5e6b!2sSmart%20Tech!5e0!3m2!1sen!2s!4v1744445273394!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        <!--swanley-->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/Swanley Branch.jpg" alt="London Store" class="img-fluid">
+                      </div>
+          <div class="location-content">
+            <h3 class="location-title">
+              SWANLEY BRANCH</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 11 Swanley high street BR8 8AE</li>
+              <li><i class="bi bi-telephone-fill"></i>07479535555</li>
+              <li><i class="bi bi-envelope-fill"></i> smarttechswanley@gmail.com</li>
+            </ul>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.4178110019575!2d0.17279379678954643!3d51.395377300000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ad390b27aaad%3A0xf1f1fda6051969a!2sSmart%20Tech%20Swanley!5e0!3m2!1sen!2s!4v1744445560660!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+         <!-- SMART TECH PETTS WOOD -->
+         <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/SMART TECH PETTS WOOD.jpg" alt="London Store" class="img-fluid">
+                      </div>
+          <div class="location-content">
+            <h3 class="location-title">
+              SMART TECH PETTS WOOD</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ</li>
+              <li><i class="bi bi-telephone-fill"></i> 07300 399998</li>
+              <li><i class="bi bi-envelope-fill"></i> smarttechpettswood@gmail.com</li>
+            </ul>
+                       
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4979.626169147224!2d0.06919634410027165!3d51.38811328240555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8ab045019d86b%3A0xf9212065ee8818b3!2sSMART%20TECH%20PETTS%20WOOD!5e0!3m2!1sen!2s!4v1744967104236!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Tech New Eltham -->
+        <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/Smart Tech New Eltham.jpg" alt="London Store" class="img-fluid">
+                      </div>
+          <div class="location-content">
+            <h3 class="location-title">Smart Tech New Eltham</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 
+                407 footscrey road new Eltham SE9 3UL</li>
+              <li><i class="bi bi-telephone-fill"></i> 07377 772795</li>
+              <li><i class="bi bi-envelope-fill"></i> smarttechneweltham@gmail.com</li>
+            </ul>
+                       
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.123062532424!2d0.06985467570079094!3d51.43753381580608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a95db8028ed7%3A0x44774ff7480c2a80!2s407%20Footscray%20Rd%2C%20London%20SE9%203UL%2C%20UK!5e0!3m2!1sen!2s!4v1744967208113!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+         <!-- Smart Tech Bexley Village -->
+         <div class="location-card">
+          <div class="location-img-container">
+            <img src="/Images/Smart Tech New Eltham.jpg" alt="London Store" class="img-fluid">
+                      </div>
+          <div class="location-content">
+            <h3 class="location-title">Smart Tech Bexley Village</h3>
+            <ul class="location-info">
+              <li><i class="bi bi-geo-alt-fill"></i> 40 bexley village DA5 1AH</li>
+              <li><i class="bi bi-telephone-fill"></i>  07300 400003</li>
+              <li><i class="bi bi-envelope-fill"></i> smarttechbexley@gmail.com</li>
+            </ul>
+                       
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1243.4521885737247!2d0.14748543876161363!3d51.44154996480576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8afd25d7de40d%3A0xa2ce16185b6213fc!2sSmart%20Tech%20Bexley!5e0!3m2!1sen!2s!4v1744967367680!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="storelocation.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+    });
+    // Lazy-load iframes for unsupported browsers
+    document.addEventListener('DOMContentLoaded', function () {
+      const iframes = document.querySelectorAll('iframe[data-src]');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const iframe = entry.target;
+              iframe.setAttribute('src', iframe.getAttribute('data-src'));
+              iframe.removeAttribute('data-src');
+              observer.unobserve(iframe);
+            }
+          });
+        }, { rootMargin: '200px' });
+
+        iframes.forEach(iframe => observer.observe(iframe));
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        iframes.forEach(iframe => {
+          iframe.setAttribute('src', iframe.getAttribute('data-src'));
+          iframe.removeAttribute('data-src');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

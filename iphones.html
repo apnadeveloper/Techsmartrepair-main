@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Repairs | Smart Tech</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Custom CSS -->
+     <link href="css/style.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #FF138B; /* Bright pink */
+            --secondary-color: #c10f6b; /* Darker pink */
+            --light-pink: #ffebf6; /* Light pink background */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .iphone-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .iphone-header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .iphone-header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -30px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        /* Product Card Styles */
+        .iphone-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .iphone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 19, 139, 0.15);
+        }
+        
+        .iphone-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+            background-color: var(--light-color);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+        }
+        
+        /* Repair Detail Page Styles */
+        .repair-section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .repair-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .repair-header h2 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .repair-header h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .repair-card {
+            background: var(--light-pink);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            margin-top: 10px;
+        }
+        
+        .repair-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 19, 139, 0.15);
+        }
+        
+        .repair-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .repair-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .spec-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .spec-value {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .highlight-card {
+            border: 2px solid var(--secondary-color);
+            position: relative;
+            background-color: var(--light-pink);
+        }
+        
+        .highlight-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255, 19, 139, 0.3);
+        }
+        
+        /* Back Button */
+        .back-btn {
+            margin-bottom: 30px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Additional Services Styles */
+        .additional-services {
+            margin-top: 50px;
+            padding: 30px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 19, 139, 0.1);
+        }
+        
+        .service-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .btn-add-to-cart {
+            background: #c10f6b;
+            color:white;
+            border: 1px solid var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-to-cart:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            overflow-y: auto;
+        }
+        
+        .booking-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(255, 19, 139, 0.3);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .form-label {
+            font-weight: 600;
+        }
+        
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+            transform: translateY(-2px);
+        }
+        
+        .booking-summary {
+            background-color: var(--light-pink);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .summary-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .iphone-header {
+                padding: 4rem 0 3rem;
+            }
+            
+            .iphone-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .iphone-img {
+                height: 150px;
+            }
+            
+            .repair-card {
+                margin-bottom: 10px;
+            }
+            
+            .booking-modal-content {
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content Area -->
+    <div id="main-content" class="container">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Book Your Repair</h3>
+            </div>
+            <div class="booking-summary">
+                <h5 class="summary-title">Repair Summary</h5>
+                <div class="summary-item">
+                    <span class="summary-label">Device:</span>
+                    <span id="modalDevice">iPhone 15 Pro Max</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Repair Plan:</span>
+                    <span id="modalPlan">Premium Screen Replacement</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Price:</span>
+                    <span id="modalPrice">£279.00</span>
+                </div>
+            </div>
+            <form id="bookingForm" action="https://formsubmit.co/info@techsmartrepair.co.uk" method="POST">
+                <input type="hidden" name="_subject" value="New iPad Repair Booking">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Appointment Date & Time</label>
+                            <input type="datetime-local" class="form-control" id="date" name="date" required>
+                        </div>
+           
+               <div class="">
+                    <label for="time" class="form-label">Preferred Store</label>
+                    <select class="form-control" id="time" name="time" required>
+                        <option value="">Select a Store</option>
+                        <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
+                        <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
+                        <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
+                        <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE </option>
+                        <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE</option>
+                        <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ </option>
+                        <option value="Smart Tech New Eltham">Smart Tech New Eltham: 407 footscrey road new Eltham SE9 3UL</option>
+                        <option value="Smart Tech New Eltham">Smart Tech Bexley Village: 40 bexley village DA5 1AH</option>
+                    </select>
+                </div>
+                <!-- <div class="">
+                    <label for="notes" class="form-label">Additional Notes</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                </div> -->
+                <input type="hidden" id="hiddenDevice" name="device">
+                <input type="hidden" id="hiddenPlan" name="plan">
+                <input type="hidden" id="hiddenPrice" name="price">
+                <button type="submit" class="submit-btn">Book Now</button>
+            </form>
+            </div>
+            </div>
+            
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/script.js"></script>
+    
+    <!-- Main Application Script -->
+    <script>
+        // iPhone product data with 24 models and 3 repair options for each
+        const iphones = {
+            'iphone-15-pro-max': {
+                title: 'iPhone 15 Pro Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-blacktitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009279096',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£399.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-15-pro': {
+                title: 'iPhone 15 Pro',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-bluetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009278906',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£219.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£269.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£389.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-15-plus': {
+                title: 'iPhone 15 Plus',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch-pink?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692923777974',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£249.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£369.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-15': {
+                title: 'iPhone 15',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692923777974',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£239.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£359.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-14-pro-max': {
+                title: 'iPhone 14 Pro Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-7inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1663703841896',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£209.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£259.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£379.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-14-pro': {
+                title: 'iPhone 14 Pro',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-silver?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1663703841896',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£249.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£369.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-14-plus': {
+                title: 'iPhone 14 Plus',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-purple?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026582322',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£179.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£349.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-14': {
+                title: 'iPhone 14',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026582322',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£169.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£219.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£339.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-13-pro-max': {
+                title: 'iPhone 13 Pro Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1631652956000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£239.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£359.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-13-pro': {
+                title: 'iPhone 13 Pro',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-gold-select?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1631652956000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£179.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£349.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-13': {
+                title: 'iPhone 13',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-blue-select-2021?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1629907843000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£159.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£209.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£329.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-13-mini': {
+                title: 'iPhone 13 mini',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-mini-pink-select-2021?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1629907843000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£149.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£319.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-12-pro-max': {
+                title: 'iPhone 12 Pro Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-max-gold-hero?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1604021658000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£169.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£219.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£339.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-12-pro': {
+                title: 'iPhone 12 Pro',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1604021661000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£159.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£209.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£329.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-12': {
+                title: 'iPhone 12',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-purple-select-2021?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1617130317000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£139.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£309.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-12-mini': {
+                title: 'iPhone 12 mini',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-mini-blue-select-2020?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1604021659000',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£129.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£179.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£299.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-11-pro-max': {
+                title: 'iPhone 11 Pro Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-pro-max-gold-select-2019?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1566953859459',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£149.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£319.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-11-pro': {
+                title: 'iPhone 11 Pro',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-pro-midnight-green-select-2019?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1566954995073',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£139.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£189.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£309.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-11': {
+                title: 'iPhone 11',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-purple-select-2019?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1566960958082',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£119.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£169.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£289.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-se-2022': {
+                title: 'iPhone SE (2022)',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-product-red-select-2022?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1644987203412',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£99.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£149.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£269.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-se-2020': {
+                title: 'iPhone SE (2020)',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-red-select-2020?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1586794486444',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£89.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£139.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£259.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-xr': {
+                title: 'iPhone XR',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-xr-blue-select-201809?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1551226036669',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£79.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£129.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£249.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-xs-max': {
+                title: 'iPhone XS Max',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-xs-max-gold-select-2018?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1550795409154',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£109.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£159.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            },
+            'iphone-xs': {
+                title: 'iPhone XS',
+                image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-xs-silver-select-2018?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1550795409154',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£99.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£149.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£269.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ]
+            }
+        };
+
+        // Additional services data
+        const additionalServices = [
+            {
+                title: 'Genuine Screen',
+                price: '£140',
+                icon: 'bi-display'
+            },
+            {
+                title: 'Charging Port',
+                price: '£70',
+                icon: 'bi-lightning-charge'
+            },
+            {
+                title: 'Speaker',
+                price: '£65',
+                icon: 'bi-speaker'
+            },
+            {
+                title: 'Cameras',
+                price: '£99',
+                icon: 'bi-camera'
+            },
+            {
+                title: 'Camera Lens',
+                price: '£20',
+                icon: 'bi-camera2'
+            },
+            {
+                title: 'Liquid Diagnostics',
+                price: '£60',
+                icon: 'bi-droplet'
+            },
+            {
+                title: 'Back Glass Replacement',
+                price: '£85',
+                icon: 'bi-phone'
+            },
+            {
+                title: 'Data Recovery',
+                price: '£250',
+                icon: 'bi-hdd'
+            },
+            {
+                title: 'Battery',
+                price: '£80',
+                icon: 'bi-battery-full'
+            }
+        ];
+
+        // Show homepage with all iPhones
+        function showHomePage() {
+            document.title = "iPhone Repairs | Smart Tech";
+            window.history.pushState({}, '', '/');
+            
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <!-- Header -->
+                <header class="iphone-header text-center">
+                    <div class="container position-relative">
+                        <h1 class="display-4 fw-bold mb-3">iPhone Repairs</h1>
+                        <p class="lead mb-0">Expert repairs for all iPhone models</p>
+                    </div>
+                </header>
+
+                <!-- Product Grid -->
+                <main class="container mb-5">
+                    <div class="row">
+                        ${Object.entries(iphones).map(([id, product]) => `
+                            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="iphone-card h-100">
+                                    <img src="${product.image}" class="iphone-img" alt="${product.title}">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5 mb-3">${product.title}</h3>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" onclick="showProductDetail('${id}')">View Options</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </main>
+            `;
+            
+            // Animate cards on scroll
+            animateCards();
+        }
+
+        // Show product detail page
+        function showProductDetail(productId) {
+            const product = iphones[productId];
+            if (!product) return;
+            
+            document.title = `${product.title} Repairs | Smart Tech`;
+            window.history.pushState({}, '', `#${productId}`);
+            
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <button class="back-btn" onclick="showHomePage()">
+                    <i class="fas fa-arrow-left me-2"></i>Back to All iPhones
+                </button>
+                
+                <div class="repair-section">
+                    <div class="repair-header">
+                        <h2>${product.title}</h2>
+                        <h3>Screen Replacement</h3>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Specifications Column -->
+                        <div class="col-md-3">
+                            <div class="repair-card border-0" style="background-color: #ffffff; box-shadow: none;">
+                                <div class="repair-title mb-5 pt-3">
+                                    <p class="fw-bold" style="color:var(--primary-color);">${product.title} <br>Screen Replacement</p>
+                                </div>
+
+                                ${Object.keys(product.options[0].specs).map(spec => `
+                                    <div class="spec-item">
+                                        <div class="spec-value fw-bold">${spec}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- Product Options -->
+                        ${product.options.map((option, index) => `
+                            <div class="col-md-3">
+                                <div class="repair-card ${index === 2 ? 'highlight-card' : ''}" 
+                                    style="background-color: ${index === 2 ? 'var(--light-pink)' : '#ffffff'};">
+                                    ${index === 2 ? '<div class="highlight-badge">Popular</div>' : ''}
+                                    <div class="repair-title">${option.name}</div>
+                                    <div class="repair-price">${option.price}</div>
+                                    
+                                    ${Object.values(option.specs).map(value => `
+                                        <div class="spec-item">
+                                            <div class="spec-value">${value}</div>
+                                        </div>
+                                    `).join('')}
+                                    
+                                    <button class="btn btn-primary mt-3 px-4 btn-book" 
+                                        onclick="openBookingModal('${product.title}', '${option.name} Screen Replacement', '${option.price}')">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Additional Services Section -->
+                    <div class="additional-services">
+                        <h3 class="text-center mb-4" style="color: var(--primary-color);">Additional Services</h3>
+                        <div class="row">
+                            ${additionalServices.map(service => `
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="service-card">
+                                        <div class="service-title">
+                                            <i class="bi ${service.icon} service-icon"></i>
+                                            ${service.title}
+                                        </div>
+                                        <div class="service-price">${service.price}</div>
+                                        <button class="btn btn-add-to-cart w-100" 
+                                            onclick="openBookingModal('Additional Service', '${service.title}', '${service.price}')">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Open booking modal with specific product details
+        function openBookingModal(device, plan, price) {
+            document.getElementById('modalDevice').textContent = device;
+            document.getElementById('modalPlan').textContent = plan;
+            document.getElementById('modalPrice').textContent = price;
+            
+            // Set hidden form values
+            document.getElementById('hiddenDevice').value = device;
+            document.getElementById('hiddenPlan').value = plan;
+            document.getElementById('hiddenPrice').value = price;
+            
+            const modal = document.getElementById('bookingModal');
+            modal.style.display = 'block';
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        }
+
+        // Close booking modal
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Handle booking form submission
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            
+            // Show confirmation
+            const plan = document.getElementById('modalPlan').textContent;
+            const price = document.getElementById('modalPrice').textContent;
+            showBookingAlert(plan, price);
+            
+            // Submit the form
+            event.target.submit();
+            
+            // Close modal and reset form
+            closeBookingModal();
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Show booking confirmation alert
+        function showBookingAlert(planTitle, price) {
+            const alertBox = document.createElement('div');
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '50%';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.backgroundColor = 'white';
+            alertBox.style.padding = '30px';
+            alertBox.style.borderRadius = '10px';
+            alertBox.style.boxShadow = '0 5px 25px rgba(255, 19, 139, 0.3)';
+            alertBox.style.zIndex = '1000';
+            alertBox.style.textAlign = 'center';
+            alertBox.style.maxWidth = '400px';
+            alertBox.style.width = '90%';
+
+            alertBox.innerHTML = `
+                <h4 style="color: var(--primary-color); margin-bottom: 20px;">Booking Confirmation</h4>
+                <p>You've selected the <strong>${planTitle}</strong> plan for ${price}.</p>
+                <p style="margin-bottom: 25px;">Our team will contact you shortly to confirm your appointment.</p>
+                <button id="closeAlert" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+                    color: white; border: none; padding: 10px 25px; border-radius: 5px; 
+                    cursor: pointer; font-weight: 600;">Continue</button>
+            `;
+
+            document.body.appendChild(alertBox);
+
+            document.getElementById('closeAlert').addEventListener('click', function() {
+                document.body.removeChild(alertBox);
+            });
+        }
+
+        // Animate cards on scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.iphone-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            const animateOnScroll = function() {
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (cardPosition < screenPosition) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        }
+
+        // Handle page load and navigation
+        function handleNavigation() {
+            const hash = window.location.hash.substring(1);
+            
+            if (hash && iphones[hash]) {
+                showProductDetail(hash);
+            } else {
+                showHomePage();
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            handleNavigation();
+            
+            // Set up modal event listeners
+            document.querySelector('.close-modal').addEventListener('click', closeBookingModal);
+            document.getElementById('bookingForm').addEventListener('submit', handleBookingSubmit);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('bookingModal');
+                if (event.target === modal) {
+                    closeBookingModal();
+                }
+            });
+        });
+        
+        window.addEventListener('popstate', handleNavigation);
+    </script>
+</body>
+</html>

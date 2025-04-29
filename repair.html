@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repair Services | SmartTech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF138B;
+      --primary-hover: #c10f6b;
+      --dark: #212529;
+      --light: #f8f9fa;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #fafafa;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255,19,139,0.08) 0%, rgba(255,255,255,1) 100%);
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .repair-categories {
+      padding: 3rem 0;
+    }
+    
+    .category-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      height: 100%;
+      background: white;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    
+    .category-img-container {
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .category-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-card:hover .category-img {
+      transform: scale(1.05);
+    }
+    
+    .category-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .category-content {
+      padding: 1.5rem;
+    }
+    
+    .category-title {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    
+    .service-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-list li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    
+    .service-list i {
+      color: var(--primary);
+      margin-right: 0.75rem;
+      font-size: 1.1rem;
+      min-width: 20px;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      padding: 0.5rem 1.25rem;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline-primary {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      background: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-section {
+      background-color: var(--dark);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .cta-title {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-subtitle {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    @media (max-width: 767.98px) {
+      .hero-section {
+        padding: 3rem 0;
+      }
+      
+      .section-header {
+        margin-bottom: 2rem;
+      }
+      
+      .category-img-container {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Container -->
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-1 order-2 d-flex flex-column justify-content-center align-items-center text-center">
+          <h1 class="display-5 fw-bold mb-3">Expert Device Repairs</h1>
+          <p class="lead mb-4">Fast, reliable repairs with 12-month warranty. Our certified technicians use premium parts for all repairs.</p>
+          <a href="booking.html" class="btn btn-primary btn-lg px-4">Book a Repair</a>
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
+          <img src="/Images/hero.jpeg" alt="Device repairs" class="img-fluid rounded-3 shadow-sm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repair Categories -->
+  <section class="repair-categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Repair Services</h2>
+        <p class="section-subtitle">Quality repairs with quick turnaround times. All repairs come with our satisfaction guarantee.</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Mobile Phones -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+           
+            <div class="category-img-container">
+              <img src="https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/m/i/midnight_1.jpg" alt="Mobile Phone Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Mobile Phones</h3>
+            <a href="/mobilebrands.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Smart Watches -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+            
+            <div class="category-img-container">
+              <img src="https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/b/o/boat_wave_astra_3_smart_watch.jpg" alt="Smartwatch Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Smart Watches</h3>
+              
+              <a href="/smartwatch.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tablets -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+           
+            <div class="category-img-container">
+              <img src="https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/s/a/samsung_galaxy_tab_a9_5g_dark_blue_.jpg" alt="Tablet Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Tablets</h3>
+              
+              <a href="/tablet.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- MacBook -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+            
+            <div class="category-img-container">
+              <img src="https://img.drz.lazcdn.com/static/pk/p/f558a077440f8fe67d30050d19e05be2.jpg_720x720q80.jpg_.webp" alt="MacBook Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">MacBook</h3>
+              
+              <a href="/MacBooks.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Laptops -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+           
+            <div class="category-img-container">
+              <img src="https://img.drz.lazcdn.com/static/pk/p/8fa9eac996027142c7844bee36efd233.png_720x720q80.png_.webp" alt="Laptop Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Laptops</h3>
+              
+              <a href="/laptops.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Speakers -->
+        <div class="col-md-6 col-lg-3">
+          <div class="category-card">
+          
+            <div class="category-img-container">
+              <img src="https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/b/o/boat_aavante_bar_2400_pro_soundbar_speaker.jpg" alt="Speaker Repairs" class="category-img">
+            </div>
+            <div class="category-content">
+              <h3 class="category-title">Speakers</h3>
+              
+              <a href="/speaker.html" class="btn btn-primary w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+          <!-- Ipad -->
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+            
+              <div class="category-img-container">
+                <img src="https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/2/_/2_203_3.jpg" alt="Speaker Repairs" class="category-img">
+              </div>
+              <div class="category-content">
+                <h3 class="category-title">Ipad</h3>
+                
+                <a href="/ipad.html" class="btn btn-primary w-100">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ipad -->
+          <div class="col-md-6 col-lg-3">
+            <div class="category-card">
+            
+              <div class="category-img-container">
+                <img src="https://img.drz.lazcdn.com/static/pk/p/0f98658693605843ed97b430acf2ed6b.jpg_720x720q80.jpg_.webp" alt="Speaker Repairs" class="category-img">
+              </div>
+              <div class="category-content">
+                <h3 class="category-title">PC/Computer</h3>
+                
+                <a href="/pccomputer.html" class="btn btn-primary w-100">Book Now</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h3 class="cta-title">Need help with your device?</h3>
+      <p class="cta-subtitle">Our experts are ready to assist you with any repair needs.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html" class="btn btn-primary px-4">Book Online</a>
+        <a href="tel:07564044441" class="btn btn-outline-light px-4">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  <!-- Component Loader -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Navbar
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('navbar-container').innerHTML = html;
+          // Set active link
+          const currentPage = window.location.pathname.split('/').pop();
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+              link.classList.add('active');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+          document.getElementById('navbar-container').innerHTML = `
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <a class="navbar-brand" href="index.html">SmartTech</a>
+                <div class="collapse navbar-collapse">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="repair.html">Repairs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>`;
+        });
+      
+      // Load Footer
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading footer:', error);
+          document.getElementById('footer-container').innerHTML = `
+            <footer class="bg-dark text-white py-4">
+              <div class="container text-center">
+                <p class="mb-0">© ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+              </div>
+            </footer>`;
+        });
+    });
+  </script>
+</body>
+</html>
