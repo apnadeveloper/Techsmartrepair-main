@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,11 +23,13 @@
             --light-color: #f8f9fa;
             --dark-color: #212529;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--dark-color);
             line-height: 1.6;
         }
+
         /* Header Styles */
         .iphone-header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -36,6 +39,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .iphone-header::before {
             content: "";
             position: absolute;
@@ -46,6 +50,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
+
         .iphone-header::after {
             content: "";
             position: absolute;
@@ -56,6 +61,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
         }
+
         /* Product Card Styles */
         .iphone-card {
             border: none;
@@ -66,10 +72,12 @@
             overflow: hidden;
             border-top: 4px solid var(--primary-color);
         }
+
         .iphone-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(255, 19, 139, 0.15);
         }
+
         .iphone-img {
             width: 100%;
             height: 200px;
@@ -77,14 +85,17 @@
             padding: 1rem;
             background-color: var(--light-color);
         }
+
         /* Button Styles */
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border: none;
         }
+
         .btn-primary:hover {
             background: linear-gradient(135deg, #e0127d, #a00d5a);
         }
+
         /* Repair Detail Page Styles */
         .repair-section {
             background-color: #fff;
@@ -93,19 +104,23 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .repair-header {
             margin-bottom: 20px;
             text-align: center;
         }
+
         .repair-header h2 {
             color: #333;
             font-weight: 700;
             margin-bottom: 5px;
         }
+
         .repair-header h3 {
             color: var(--primary-color);
             font-weight: 600;
         }
+
         .repair-card {
             background: var(--light-pink);
             border-radius: 8px;
@@ -116,10 +131,12 @@
             border: 1px solid #eee;
             margin-top: 10px;
         }
+
         .repair-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255, 19, 139, 0.15);
         }
+
         .repair-title {
             font-size: 1.4rem;
             font-weight: 700;
@@ -127,6 +144,7 @@
             color: #333;
             text-align: center;
         }
+
         .repair-price {
             font-size: 2rem;
             font-weight: 700;
@@ -134,21 +152,25 @@
             margin-bottom: 25px;
             text-align: center;
         }
+
         .spec-item {
             margin-bottom: 12px;
             padding-bottom: 12px;
             text-align: center;
             border-bottom: 1px solid var(--primary-color);
         }
+
         .spec-value {
             color: #333;
             font-weight: 500;
         }
+
         .highlight-card {
             border: 2px solid var(--secondary-color);
             position: relative;
             background-color: var(--light-pink);
         }
+
         .highlight-badge {
             position: absolute;
             top: -12px;
@@ -161,6 +183,7 @@
             font-weight: bold;
             box-shadow: 0 2px 8px rgba(255, 19, 139, 0.3);
         }
+
         /* Back Button */
         .back-btn {
             margin-bottom: 30px;
@@ -170,14 +193,17 @@
             font-weight: 600;
             cursor: pointer;
         }
+
         .back-btn:hover {
             color: var(--secondary-color);
         }
+
         /* Additional Services Styles */
         .additional-services {
             margin-top: 50px;
             padding: 30px 0;
         }
+
         .service-card {
             background: white;
             border-radius: 10px;
@@ -187,26 +213,31 @@
             transition: all 0.3s ease;
             border-left: 4px solid var(--primary-color);
         }
+
         .service-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(255, 19, 139, 0.1);
         }
+
         .service-title {
             font-weight: 600;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
+
         .service-price {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
+
         .service-icon {
             margin-right: 10px;
             color: var(--primary-color);
             font-size: 1.2rem;
         }
+
         .btn-add-to-cart {
             background: #c10f6b;
             color: white;
@@ -215,10 +246,12 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
+
         .btn-add-to-cart:hover {
             background: var(--primary-color);
             color: white;
         }
+
         /* Booking Modal Styles */
         .booking-modal {
             display: none;
@@ -231,6 +264,7 @@
             z-index: 1050;
             overflow-y: auto;
         }
+
         .booking-modal-content {
             background-color: white;
             margin: 5% auto;
@@ -241,6 +275,7 @@
             width: 90%;
             position: relative;
         }
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -251,28 +286,34 @@
             background: none;
             border: none;
         }
+
         .modal-header {
             border-bottom: 1px solid #eee;
             padding-bottom: 15px;
             margin-bottom: 20px;
         }
+
         .modal-title {
             color: var(--primary-color);
             font-weight: 700;
         }
+
         .form-label {
             font-weight: 600;
         }
+
         .form-control {
             margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #ddd;
             padding: 10px 15px;
         }
+
         .form-control:focus {
             border-color: var(--primary-color);
             box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
         }
+
         .submit-btn {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -284,49 +325,60 @@
             margin-top: 15px;
             transition: all 0.3s ease;
         }
+
         .submit-btn:hover {
             background: linear-gradient(135deg, #e0127d, #a00d5a);
             transform: translateY(-2px);
         }
+
         .booking-summary {
             background-color: var(--light-pink);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
         }
+
         .summary-title {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
+
         .summary-item {
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
         }
+
         .summary-label {
             font-weight: 600;
         }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .iphone-header {
                 padding: 4rem 0 3rem;
             }
+
             .iphone-header h1 {
                 font-size: 2.2rem;
             }
+
             .iphone-img {
                 height: 150px;
             }
+
             .repair-card {
                 margin-bottom: 10px;
             }
+
             .booking-modal-content {
                 margin: 10% auto;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar placeholder -->
     <div id="navbar-container"></div>
@@ -362,7 +414,7 @@
                 </div>
             </div>
             <form id="bookingForm" action="https://formsubmit.co/info@techsmartrepair.co.uk" method="POST">
-                <input type="hidden" name="_subject" value="New iPad Repair Booking">
+                <input type="hidden" name="_subject" value="Iphone Repair Booking">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="#">
                 <div class="row g-2">
@@ -391,11 +443,16 @@
                                 <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
                                 <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
                                 <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
-                                <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE</option>
-                                <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE</option>
-                                <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ </option>
-                                <option value="Smart Tech New Eltham">SMART TECH NEW ELTHAM: 407 footscrey road new Eltham SE9 3UL</option>
-                                <option value="Smart Tech New Eltham">SMART TECH BEXLEY VILLAGE: 40 bexley village DA5 1AH</option>
+                                <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE
+                                </option>
+                                <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE
+                                </option>
+                                <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway,
+                                    Petts Wood, Orpington BR5 1EQ </option>
+                                <option value="Smart Tech New Eltham">SMART TECH NEW ELTHAM: 407 footscrey road new
+                                    Eltham SE9 3UL</option>
+                                <option value="Smart Tech New Eltham">SMART TECH BEXLEY VILLAGE: 40 bexley village DA5
+                                    1AH</option>
                             </select>
                         </div>
                         <!-- <div class="">
@@ -2916,6 +2973,172 @@
                     }
                 ]
             },
+            'iphone-8': {
+                title: 'iPhone 8',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/8.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£30',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£35',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£40',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£10',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£30',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'iphone-6': {
+                title: 'iPhone 6',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/6plus.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£--',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£--',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£25',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£25',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£35',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£10',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£25',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
 
             'iphone-7-plus': {
                 title: 'iPhone 7 Plus',
@@ -3625,7 +3848,7 @@
                     }
                 ],
                 additionalServices: [
-                                        {
+                    {
                         title: 'Charging Dock ',
                         price: '£19',
                         icon: 'bi-lightning-charge'
@@ -4116,4 +4339,5 @@
         window.addEventListener('popstate', handleNavigation);
     </script>
 </body>
+
 </html>
