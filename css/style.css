@@ -486,4 +486,6 @@ hr.divider {
     color:#c10f6b !important;
     text-decoration: none;
 }
-
+.btn-primary{
+  width:100% !important;
+}

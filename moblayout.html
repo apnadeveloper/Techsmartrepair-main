@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhones Repairs | Smart Tech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #FF138B;
+            --secondary-color: #c10f6b;
+            --light-pink: #ffebf6;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Mobile Product Cards */
+        .mobile-product-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .mobile-product-card {
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .mobile-product-header {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .mobile-product-body {
+            padding: 15px;
+            background-color: white;
+        }
+
+        .mobile-product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .mobile-product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .mobile-product-specs {
+            margin-bottom: 15px;
+        }
+
+        .mobile-product-spec {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mobile-product-spec-label {
+            font-weight: 500;
+        }
+
+        .mobile-product-spec-value {
+            color: #555;
+        }
+
+        .mobile-product-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .mobile-product-btn:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+            color: white;
+        }
+
+        .mobile-product-more {
+            display: block;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        /* Highlight card for premium option */
+        .mobile-product-card.highlight {
+            border-top: 4px solid var(--secondary-color);
+            position: relative;
+        }
+
+        .mobile-product-card.highlight .mobile-product-header {
+            background-color: var(--light-pink);
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(255, 19, 139, 0.3);
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .mobile-product-cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .mobile-product-card {
+                width: calc(33.333% - 20px);
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Content Area -->
+    <div id="main-content" class="container">
+        <!-- Mobile Product Cards -->
+        <div class="mobile-product-cards">
+            <!-- Standard Card -->
+            <div class="mobile-product-card">
+                <div class="mobile-product-header">
+                    STANDARD
+                </div>
+                <div class="mobile-product-body">
+                    <div class="mobile-product-title">Screen Replacement</div>
+                    
+                    <div class="mobile-product-specs">
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Quality:</span>
+                            <span class="mobile-product-spec-value">High-grade</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Warranty:</span>
+                            <span class="mobile-product-spec-value">1 Year</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Repair Time:</span>
+                            <span class="mobile-product-spec-value">1 Day</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mobile-product-more">More Details</a>
+                    
+                    <div class="mobile-product-price">£299.00</div>
+                    
+                    <button class="mobile-product-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Premium Card -->
+            <div class="mobile-product-card highlight">
+                <div class="mobile-product-header">
+                    PREMIUM
+                    <div class="highlight-badge">Popular</div>
+                </div>
+                <div class="mobile-product-body">
+                    <div class="mobile-product-title">Screen Replacement</div>
+                    
+                    <div class="mobile-product-specs">
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Quality:</span>
+                            <span class="mobile-product-spec-value">Premium</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Warranty:</span>
+                            <span class="mobile-product-spec-value">2 Years</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Repair Time:</span>
+                            <span class="mobile-product-spec-value">Same Day</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mobile-product-more">More Details</a>
+                    
+                    <div class="mobile-product-price">£329.00</div>
+                    
+                    <button class="mobile-product-btn">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Genuine Card -->
+            <div class="mobile-product-card">
+                <div class="mobile-product-header">
+                    GENUINE
+                </div>
+                <div class="mobile-product-body">
+                    <div class="mobile-product-title">Screen Replacement</div>
+                    
+                    <div class="mobile-product-specs">
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Quality:</span>
+                            <span class="mobile-product-spec-value">Apple Genuine</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Warranty:</span>
+                            <span class="mobile-product-spec-value">3 Years</span>
+                        </div>
+                        <div class="mobile-product-spec">
+                            <span class="mobile-product-spec-label">Repair Time:</span>
+                            <span class="mobile-product-spec-value">Same Day</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mobile-product-more">More Details</a>
+                    
+                    <div class="mobile-product-price">£489.00</div>
+                    
+                    <button class="mobile-product-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
