@@ -1,9 +1,14 @@
+<!-- Make sure you have these in your head section -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-  <div class="container px-5">
+  <div class="container px-lg-5 px-md-4 px-3"> <!-- Improved responsive padding -->
     <!-- Brand/logo -->
     <a class="navbar-brand" href="/index.html">
-      <!-- <span class="d-inline-block align-middle">Smart Tech</span> -->
-      <img src="/Images/logo.png" alt="Logo" class="d-inline-block align-middle" width="220" height="50">
+      <img src="/Images/logo.png" alt="Logo" 
+           class="d-inline-block align-middle img-fluid" 
+           style="max-height: 40px; width: auto;"> <!-- Responsive logo -->
     </a>
     
     <!-- Mobile toggle button -->
@@ -14,28 +19,23 @@
     
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <!-- <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/booking.html">Online Booking</a>
-        </li> -->
+      <ul class="navbar-nav ms-auto text-nowrap"> <!-- Prevent text wrapping -->
+        <!-- Uncomment these if needed -->
         <li class="nav-item">
           <a class="nav-link text-black fw-medium" href="/repair.html">Repair & Servicing</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/pricing.html">Pricing</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link text-black fw-medium" href="/sellyourdevice.html">Sell your device</a>
-          </li>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-black fw-medium" href="#">New & Pre-owned phones</a>
         </li>
-          <li class="nav-item">
-            <a class="nav-link text-black fw-medium" href="/offers.html">Offers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-black fw-medium" href="/storelocation.html">Store Locator</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link text-black fw-medium" href="/offers.html">Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black fw-medium" href="/storelocation.html">Store Locator</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-black fw-medium" href="/team.html">Join our Team</a>
         </li>
@@ -43,3 +43,6 @@
     </div>
   </div>
 </nav>
+
+<!-- Add Bootstrap JS at end of body -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
