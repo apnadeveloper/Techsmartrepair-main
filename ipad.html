@@ -1,0 +1,3153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apple Repairs | Smart Tech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #FF138B;
+            /* Bright pink */
+            --secondary-color: #c10f6b;
+            /* Darker pink */
+            --light-pink: #ffebf6;
+            /* Light pink background */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .iphone-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0 4rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iphone-header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .iphone-header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -30px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        /* Product Card Styles */
+        .iphone-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .iphone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 19, 139, 0.15);
+        }
+
+        .iphone-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 1rem;
+            background-color: var(--light-color);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+        }
+
+        /* Repair Detail Page Styles */
+        .repair-section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .repair-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .repair-header h2 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .repair-header h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .repair-card {
+            background: var(--light-pink);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            margin-top: 10px;
+        }
+
+        .repair-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 19, 139, 0.15);
+        }
+
+        .repair-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .repair-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .spec-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .spec-value {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .highlight-card {
+            border: 2px solid var(--secondary-color);
+            position: relative;
+            background-color: var(--light-pink);
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255, 19, 139, 0.3);
+        }
+
+        /* Back Button */
+        .back-btn {
+            margin-bottom: 30px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Additional Services Styles */
+        .additional-services {
+            margin-top: 50px;
+            padding: 30px 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 19, 139, 0.1);
+        }
+
+        .service-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .btn-add-to-cart {
+            background: #c10f6b;
+            color: white;
+            border: 1px solid var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            overflow-y: auto;
+        }
+
+        .booking-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(255, 19, 139, 0.3);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 19, 139, 0.25);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #e0127d, #a00d5a);
+            transform: translateY(-2px);
+        }
+
+        .booking-summary {
+            background-color: var(--light-pink);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .summary-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .summary-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-label {
+            font-weight: 600;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .iphone-header {
+                padding: 4rem 0 3rem;
+            }
+
+            .iphone-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .iphone-img {
+                height: 150px;
+            }
+
+            .repair-card {
+                margin-bottom: 10px;
+            }
+
+            .booking-modal-content {
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content Area -->
+    <div id="main-content" class="container">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Book Your Repair</h3>
+            </div>
+            <div class="booking-summary">
+                <h5 class="summary-title">Repair Summary</h5>
+                <div class="summary-item">
+                    <span class="summary-label">Device:</span>
+                    <span id="modalDevice">iPhone 15 Pro Max</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Repair Plan:</span>
+                    <span id="modalPlan">Premium Screen Replacement</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Price:</span>
+                    <span id="modalPrice">£279.00</span>
+                </div>
+            </div>
+            <form id="bookingForm" action="https://formsubmit.co/info@techsmartrepair.co.uk" method="POST">
+                <input type="hidden" name="_subject" value="Iphone Repair Booking">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Appointment Date & Time</label>
+                            <input type="datetime-local" class="form-control" id="date" name="date" required>
+                        </div>
+
+                        <div class="">
+                            <label for="time" class="form-label">Preferred Store</label>
+                            <select class="form-control" id="time" name="time" required>
+                                <option value="" class="fw-bold">SELECT A STORE</option>
+                                <option value="SIDCUP BRANCH">SIDCUP BRANCH: 46 Sidcup High Street, DA14 6EH</option>
+                                <option value="ELTHAM BRANCH">ELTHAM BRANCH: 158 Eltham High Street, SE9 1BJ</option>
+                                <option value="CHISLEHURST BRANCH">CHISLEHURST BRANCH: 21 Park, Road BR7 5AY</option>
+                                <option value="ELTHAM BRANCH">BEXELEYHEATH BRANCH: 96A Broadway, Bexleyheath DA6 7DE
+                                </option>
+                                <option value="CHISLEHURST BRANCH">SWANLEY BRANCH: 11 Swanley high street BR8 8AE
+                                </option>
+                                <option value="SMART TECH PETTS WOOD">SMART TECH PETTS WOOD: 4, Rice Parade, Fairway,
+                                    Petts Wood, Orpington BR5 1EQ </option>
+                                <option value="Smart Tech New Eltham">SMART TECH NEW ELTHAM: 407 footscrey road new
+                                    Eltham SE9 3UL</option>
+                                <option value="Smart Tech New Eltham">SMART TECH BEXLEY VILLAGE: 40 bexley village DA5
+                                    1AH</option>
+                            </select>
+                        </div>
+                        <!-- <div class="">
+                    <label for="notes" class="form-label">Additional Notes</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                </div> -->
+                        <input type="hidden" id="hiddenDevice" name="device">
+                        <input type="hidden" id="hiddenPlan" name="plan">
+                        <input type="hidden" id="hiddenPrice" name="price">
+                        <button type="submit" class="submit-btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <!-- Main Application Script -->
+    <script>
+        // iPhone product data with 24 models and 3 repair options for each
+        const iphones = {
+            'ipad-2th-gen-(a1397, a1396, a1395)': {
+                title: 'IPad 2th Gen (A1397, A1396, A1395)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/2016.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£30',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£30',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+
+                ]
+            },
+
+            'ipad-3th-gen-(a1430,a1416,a1403)': {
+                title: 'IPad 3th Gen (A1430, A1416, A1403)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/8-2020.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£30',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£30',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+            'ipad-4th-gen-(a1460,a1459,a1458)': {
+                title: 'IPad 4th Gen (A1460, A1459, A1458)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/7th-gen-2019.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£35',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£30',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£20',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-5th-gen-(a1822-a823)': {
+                title: 'IPad 5th Gen (A1822-A823)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/2016.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£70',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£70',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+            'ipad-6th-gen-(a1893-a1954)': {
+                title: 'IPad 6th Gen (A1893-A1954)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/8-2020.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£70.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£70',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-7th-gen-(a2197-a2198-a2200)': {
+                title: 'IPad 7th Gen (A2197-A2198-A2200)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/7th-gen-2019.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£90.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£60',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£45',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£70',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-8th-gen-(a2270,a2428,a2429,a2430)': {
+                title: 'IPAD 8TH GEN (A2270, A2428, A2429, A2430)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/6-2018.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£80.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£55',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£45',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-9th-gen-(a2602,a2604,a2603)': {
+                title: 'IPad 9th Gen (A2602, A2604, A2603)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/5-2017.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£80.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£55',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£45',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£55',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-10th-gen-(a2696-a2757-a2777)': {
+                title: 'IPad 10th Gen ( A2696-A2757-A2777)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipad4.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£150.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£150',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£--',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: 'Free',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: 'Free',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£0 - £70',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£65',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-9.7-(a1673-a1674-a1675)': {
+                title: 'IPad Pro 9.7 (A1673-A1674-A1675)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/9-2015.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£110.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£110',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£60',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£75',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£55',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-10.5-(a1701-a1709)': {
+                title: 'IPad Pro 10.5 (A1701 – A1709)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/pro11-2018.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£120.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£120',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£80',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-11-(a1980-a2013)': {
+                title: 'IPad Pro 11 (A1980,A2013)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/10-2017.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£170.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£170',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£60',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£60',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£115',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£70',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-11-2nd-gen-(a2228-a2068-a2230)': {
+                title: 'IPad Pro 11 2nd Gen (A2228-A2068-A2230)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/peo3th-gen-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£180.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£180',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£70',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£140',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-11-3rd-generation-(a237,a2459,a2301)': {
+                title: 'IPad Pro 11 3rd Generation (A237, A2459, A2301)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/pro11-2018.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£190.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£190',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£60',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£55',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£40',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£140',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£70',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-12.9-1st-gen-(a1584,a1652)': {
+                title: 'IPad 12.9 1ST Gen (A1584, A1652 )',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/pro-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£180.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£180',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£80',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£70',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£145',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£80',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-12.9-2nd-gen-(a1670,a1671)': {
+                title: 'IPad Pro 12.9 2nd Gen (A1670, A1671)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/peo3th-gen-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£280.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£280',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£90',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£80',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£20',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£90',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+            'ipad-pro-12.9-3rd-gen-(a1876,a2014,a1895,a1983)': {
+                title: 'IPad Pro 12.9 3rd Gen (A1876, A2014, A1895, A1983)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/pro-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£199.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£199',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£90',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£60',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£120',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£90',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-12.9-4th-gen-(a2229,a2069,a2232,a2233)': {
+                title: 'IPad Pro 12.9″ 4th Gen (A2229, A2069, A2232, A2233)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/pro-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£180.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£180',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£90',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£125',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£80',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-pro-12.9-5th-gen-(a2378-a2461-a2379-a2462)': {
+                title: 'IPad Pro 12.9 5th Gen (A2378-A2461-A2379-A2462)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/peo3th-gen-12.9.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£220.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£220',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£195',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£80',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-air-5th-gen-(a2588-a2589-a2591)': {
+                title: 'Ipad Air 5th Gen ( A2588-A2589-A2591)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/air-10.9-2020.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£150.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£150',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£75',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£80',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£80',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-air-4-(a2316,a2324,a2325,a2072)': {
+                title: 'iPad Air 4 (A2316, A2324, A2325, A2072 )',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipad-air-4.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£150.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£150',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£90',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£95',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£80',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-air-3-(a2152-a2153-a2123)': {
+                title: 'IPad AIR 3 (A2152-A2153-A2123)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipad-air-3-2019.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£120.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£120',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£85',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£60',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-air-2-(a1566-a1567)': {
+                title: 'iPad Air 2 (A1566-A1567)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipad-air-2-2014.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£90.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£--',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£65',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£55',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-air-(a1474-a1475)': {
+                title: 'IPad Air (A1474-A1475)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipadair-1-2013-2014.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£25',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£50',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-mini-6-(a1474-a1475-a1476)': {
+                title: 'IPad Mini 6 (A1474-A1475-A1476)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/mini-4-2015.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£230.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£230',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£65',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£55',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£70',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£--',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£75',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-mini-5-(a2133-a2124-a2126)': {
+                title: 'IPad Mini 5 (A2133-A2124-A2126)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/mini-5-2019.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£90.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£90',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£60',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£50',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+            'ipad-mini-4-(a1538-a1550)': {
+                title: 'IPad Mini 4 (A1538-A1550)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/mini-3-2014.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£80.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£80',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£55',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£45',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£55',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£50',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+            'ipad-mini-3-(a1599,a1600)': {
+                title: 'IPad Mini 3 (A1599, A1600)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/mini-3-2014.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£40.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£40',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£40',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£30',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£45',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+            'ipad-mini-1-&-2-(a1489,a1490,a1432,a1454)': {
+                title: 'IPad Mini 1 & 2 (A1489, A1490,A1432, A1454)',
+                image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/mini-2012.png',
+                options: [
+                    {
+                        name: 'Standard',
+                        price: '£229.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'High-grade',
+                            'Warranty': '1 Year',
+                            'Repair Time': '1 Day'
+                        }
+                    },
+                    {
+                        name: 'Premium',
+                        price: '£279.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Premium',
+                            'Warranty': '2 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    },
+                    {
+                        name: 'Genuine',
+                        price: '£35.00',
+                        specs: {
+                            'Repair Type': 'Screen Replacement',
+                            'Quality': 'Apple Genuine',
+                            'Warranty': '3 Years',
+                            'Repair Time': 'Same Day'
+                        }
+                    }
+                ],
+                additionalServices: [
+                    {
+                        title: 'Genuine Screen',
+                        price: '£35',
+                        icon: 'bi-display'
+                    },
+                    {
+                        title: 'Charging Port',
+                        price: '£45',
+                        icon: 'bi-lightning-charge'
+                    },
+                    {
+                        title: 'Audio',
+                        price: '£--',
+                        icon: 'bi-speaker'
+                    },
+                    {
+                        title: 'Cameras',
+                        price: '£30',
+                        icon: 'bi-camera'
+                    },
+                    {
+                        title: 'Camera Lens',
+                        price: '£--',
+                        icon: 'bi-camera2'
+                    },
+                    {
+                        title: 'Liquid Diagnostics',
+                        price: '£--',
+                        icon: 'bi-droplet'
+                    },
+                    {
+                        title: 'Back Glass Replacement',
+                        price: '£--',
+                        icon: 'bi-phone'
+                    },
+                    {
+                        title: 'Data Recovery',
+                        price: '£30',
+                        icon: 'bi-hdd'
+                    },
+                    {
+                        title: 'Battery Replacement',
+                        price: '£40',
+                        icon: 'bi-battery'
+                    }
+                ]
+            },
+
+        };
+
+       
+
+        // Show homepage with all iPhones
+        function showHomePage() {
+            document.title = "ipad Repairs | Smart Tech";
+            window.history.pushState({}, '', '/');
+
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <!-- Header -->
+                <header class="iphone-header text-center">
+                    <div class="container position-relative">
+                        <h1 class="display-4 fw-bold mb-3">ipad Repairs</h1>
+                        <p class="lead mb-0">Expert repairs for all ipad models</p>
+                    </div>
+                </header>
+
+                <!-- Product Grid -->
+                <main class="container mb-5">
+                    <div class="row">
+                        ${Object.entries(iphones).map(([id, product]) => `
+                            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                                <div class="iphone-card h-100">
+                                    <img src="${product.image}" class="iphone-img" alt="${product.title}">
+                                    <div class="card-body text-center">
+                                        <h3 class="h5 mb-3">${product.title}</h3>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary" onclick="showProductDetail('${id}')">View Options</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </main>
+            `;
+
+            // Animate cards on scroll
+            animateCards();
+        }
+
+        // Show product detail page
+        function showProductDetail(productId) {
+            const product = iphones[productId];
+            if (!product) return;
+
+            document.title = `${product.title} Repairs | Smart Tech`;
+            window.history.pushState({}, '', `#${productId}`);
+
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <button class="back-btn" onclick="showHomePage()">
+                    <i class="fas fa-arrow-left me-2"></i>Back to All iPhones
+                </button>
+                
+                <div class="repair-section">
+                    <div class="repair-header">
+                       
+                        <h3 class="fw-bold">${product.title}</h3>
+                          <h3>Repairing Details</h3>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- Specifications Column -->
+                        <div class="col-md-3">
+                            <div class="repair-card border-0" style="background-color: #ffffff; box-shadow: none;">
+                                <div class="repair-title pt-1">
+                                    <p class="fw-bold" style="color:var(--primary-color);"> <br>Screen Replacement</p>
+                                </div>
+
+                                ${Object.keys(product.options[0].specs).map(spec => `
+                                    <div class="spec-item">
+                                        <div class="spec-value fw-bold">${spec}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- Product Options -->
+                        ${product.options.map((option, index) => `
+                            <div class="col-md-3">
+                                <div class="repair-card ${index === 2 ? 'highlight-card' : ''}" 
+                                    style="background-color: ${index === 2 ? 'var(--light-pink)' : '#ffffff'};">
+                                    ${index === 2 ? '<div class="highlight-badge">Popular</div>' : ''}
+                                    <div class="repair-title">${option.name}</div>
+                                    <div class="repair-price">${option.price}</div>
+                                    
+                                    ${Object.values(option.specs).map(value => `
+                                        <div class="spec-item">
+                                            <div class="spec-value">${value}</div>
+                                        </div>
+                                    `).join('')}
+                                    
+                                    <button class="btn btn-primary mt-3 px-4 btn-book" 
+                                        onclick="openBookingModal('${product.title}', '${option.name} Screen Replacement', '${option.price}')">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Additional Services Section -->
+                    <div class="additional-services">
+                        <h3 class="text-center mb-4" style="color: var(--primary-color);">Additional Services</h3>
+                        <div class="row">
+                            <!-- Model-specific services -->
+                            ${product.additionalServices ? product.additionalServices.map(service => `
+                                <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="service-card">
+                                        <div class="service-title">
+                                            <i class="bi ${service.icon} service-icon"></i>
+                                            ${service.title}
+                                        </div>
+                                        <div class="service-price">${service.price}</div>
+                                        <p class="small text-muted mb-2">${service.description}</p>
+                                        <button class="btn btn-add-to-cart w-100" 
+                                            onclick="openBookingModal('${product.title}', '${service.title}', '${service.price}')">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('') : ''}
+                          
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Open booking modal with specific product details
+        function openBookingModal(device, plan, price) {
+            document.getElementById('modalDevice').textContent = device;
+            document.getElementById('modalPlan').textContent = plan;
+            document.getElementById('modalPrice').textContent = price;
+
+            // Set hidden form values
+            document.getElementById('hiddenDevice').value = device;
+            document.getElementById('hiddenPlan').value = plan;
+            document.getElementById('hiddenPrice').value = price;
+
+            const modal = document.getElementById('bookingModal');
+            modal.style.display = 'block';
+
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        }
+
+        // Close booking modal
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Handle booking form submission
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+
+            // Show confirmation
+            const plan = document.getElementById('modalPlan').textContent;
+            const price = document.getElementById('modalPrice').textContent;
+            showBookingAlert(plan, price);
+
+            // Submit the form
+            event.target.submit();
+
+            // Close modal and reset form
+            closeBookingModal();
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Show booking confirmation alert
+        function showBookingAlert(planTitle, price) {
+            const alertBox = document.createElement('div');
+            alertBox.style.position = 'fixed';
+            alertBox.style.top = '50%';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translate(-50%, -50%)';
+            alertBox.style.backgroundColor = 'white';
+            alertBox.style.padding = '30px';
+            alertBox.style.borderRadius = '10px';
+            alertBox.style.boxShadow = '0 5px 25px rgba(255, 19, 139, 0.3)';
+            alertBox.style.zIndex = '1000';
+            alertBox.style.textAlign = 'center';
+            alertBox.style.maxWidth = '400px';
+            alertBox.style.width = '90%';
+
+            alertBox.innerHTML = `
+                <h4 style="color: var(--primary-color); margin-bottom: 20px;">Booking Confirmation</h4>
+                <p>You've selected the <strong>${planTitle}</strong> plan for ${price}.</p>
+                <p style="margin-bottom: 25px;">Our team will contact you shortly to confirm your appointment.</p>
+                <button id="closeAlert" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+                    color: white; border: none; padding: 10px 25px; border-radius: 5px; 
+                    cursor: pointer; font-weight: 600;">Continue</button>
+            `;
+
+            document.body.appendChild(alertBox);
+
+            document.getElementById('closeAlert').addEventListener('click', function () {
+                document.body.removeChild(alertBox);
+            });
+        }
+
+        // Animate cards on scroll
+        function animateCards() {
+            const cards = document.querySelectorAll('.iphone-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            const animateOnScroll = function () {
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+
+                    if (cardPosition < screenPosition) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        }
+
+        // Handle page load and navigation
+        function handleNavigation() {
+            const hash = window.location.hash.substring(1);
+
+            if (hash && iphones[hash]) {
+                showProductDetail(hash);
+            } else {
+                showHomePage();
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function () {
+            handleNavigation();
+
+            // Set up modal event listeners
+            document.querySelector('.close-modal').addEventListener('click', closeBookingModal);
+            document.getElementById('bookingForm').addEventListener('submit', handleBookingSubmit);
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function (event) {
+                const modal = document.getElementById('bookingModal');
+                if (event.target === modal) {
+                    closeBookingModal();
+                }
+            });
+        });
+        window.addEventListener('popstate', handleNavigation);
+    </script>
+</body>
+
+</html>
