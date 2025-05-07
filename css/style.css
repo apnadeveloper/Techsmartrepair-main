@@ -128,14 +128,14 @@ body {
       border: 1px solid #ced4da;
     }
     .form-control:focus, .form-select:focus {
-      border-color: #0d6efd;
+      border-color: #FF138B;
       box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     }
     textarea.form-control {
       height: 100px !important;
     }
     .btn-submit {
-      background-color: #0d6efd;
+      background-color: #FF138B;
       border: none;
       padding: 12px 30px;
       font-weight: 600;
@@ -153,7 +153,7 @@ body {
       position: absolute;
       width: 50%;
       height: 3px;
-      background: #0d6efd;
+      background: #FF138B;
       bottom: -10px;
       left: 0;
     }
@@ -484,7 +484,9 @@ hr.divider {
 
 .navbar-nav .nav-link:hover{
     color:#c10f6b !important;
-    text-decoration: none;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+
 }
 .btn-primary{
   width:100% !important;
