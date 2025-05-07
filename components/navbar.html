@@ -1,48 +1,124 @@
-<!-- Make sure you have these in your head section -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-  <div class="container px-lg-5 px-md-4 px-3"> <!-- Improved responsive padding -->
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="/index.html">
-      <img src="/Images/logo.png" alt="Logo" 
-           class="d-inline-block align-middle img-fluid" 
-           style="max-height: 40px; width: auto;"> <!-- Responsive logo -->
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Enhanced viewport meta for iOS devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Mobile toggle button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto text-nowrap"> <!-- Prevent text wrapping -->
-        <!-- Uncomment these if needed -->
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/repair.html">Repair & Servicing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/sellyourdevice.html">Sell your device</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="#">New & Pre-owned phones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/offers.html">Offers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/storelocation.html">Store Locator</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-black fw-medium" href="/team.html">Join our Team</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- iOS Optimization CSS -->
+    <style>
+        /* Safari-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .navbar {
+                padding-top: env(safe-area-inset-top);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+            
+            .navbar-toggler {
+                margin-right: env(safe-area-inset-right);
+            }
+            
+            .navbar-collapse {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            
+            /* Prevent zoom on focus */
+            .nav-link {
+                font-size: 16px;
+            }
+        }
+        
+        /* Better mobile menu transitions */
+        .navbar-collapse {
+            transition: all 0.3s ease;
+        }
+        
+        /* Logo optimization */
+        .navbar-brand img {
+            max-width: 200px;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                max-width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container px-lg-4 px-md-3 px-2">
+            <!-- Optimized logo -->
+            <a class="navbar-brand" href="/index.html">
+                <img src="/Images/logo.png" 
+                     alt="Company Logo" 
+                     class="img-fluid"
+                     loading="lazy"
+                     decoding="async">
+            </a>
+            
+            <!-- Enhanced mobile toggle -->
+            <button class="navbar-toggler border-0 py-2" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="/repair.html">Repair & Servicing</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="/sellyourdevice.html">Sell your device</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="#">New & Pre-owned phones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="/offers.html">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="/storelocation.html">Store Locator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-medium px-3 py-2 py-lg-1" href="/team.html">Join our Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Add Bootstrap JS at end of body -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- iOS Enhancements -->
+    <script>
+        // Fix touch delay
+        document.addEventListener('touchstart', function() {}, true);
+        
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('navbarNav');
+            if(window.innerWidth < 992 && !e.target.closest('.navbar')) {
+                bootstrap.Collapse.getInstance(nav)?.hide();
+            }
+        });
+        
+        // Prevent horizontal scroll on menu open
+        document.getElementById('navbarNav').addEventListener('show.bs.collapse', function() {
+            document.body.style.overflowX = 'hidden';
+        });
+    </script>
+</body>
+</html>
