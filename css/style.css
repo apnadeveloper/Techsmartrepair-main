@@ -485,7 +485,7 @@ hr.divider {
 .navbar-nav .nav-link:hover{
     color:#c10f6b !important;
     transition: all 0.3s ease;
-    transform: scale(1.1);
+    transform: translateY(-3px);
 
 }
 .btn-primary{
