@@ -14,7 +14,7 @@ body {
   }
   .btn{
     background-color: #c10f6b !important;
-    border: none;
+    border: none !important;
 
   }
   .btn:hover{
