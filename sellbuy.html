@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy/Sell Devices - tech smart</title>
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+    <style>
+        .form-section {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .gradient-header {
+            background: linear-gradient(45deg, #bc1166, #dc0799);
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .nav-tabs .nav-link {
+            font-weight: 500;
+            border: none;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(45deg, #bc119a, #f825fc);
+            color: white !important;
+            border-radius: 8px;
+        }
+
+        .storage-option {
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .form-section {
+                padding: 20px;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+ <!-- Navbar loaded via JavaScript -->
+  <div id="navbar-container"></div>
+
+<div class="container py-5">
+    <div class="form-section">
+        <div class="gradient-header text-center">
+            <h2>Buy/Sell Devices</h2>
+            <p>Get instant quotes for devices</p>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="sell-tab" data-bs-toggle="tab" data-bs-target="#sell-form" type="button" role="tab" aria-controls="sell-form" aria-selected="true">SELL DEVICE</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy-form" type="button" role="tab" aria-controls="buy-form" aria-selected="false">BUY DEVICE</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Sell Form -->
+            <div class="tab-pane fade show active" id="sell-form" role="tabpanel" aria-labelledby="sell-tab">
+                <form action="https://formsubmit.co/info@techsmartrepair.co.uk" method="POST" class="needs-validation" novalidate>
+                    <input type="hidden" name="_next" value="https://yourdomain.co/thank-you">
+                    <input type="hidden" name="emailto" value="info@techsmartrepair.co.uk">
+                    <input type="hidden" name="form-type" value="sell">
+
+                    <div class="row g-3 mb-4">
+                        <h5 class="mb-3">Seller Information</h5>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <h5 class="mb-3">Device Details</h5>
+                        <div class="col-md-6">
+                            <select class="form-select" name="device-model" id="sellDeviceModel" required>
+                                <option value="">Select Device Model</option>
+                                <option>Apple</option>
+                                <option>Samsung</option>
+                                <option>Google</option>
+                                <option>Huawei</option>
+                                <option>OnePlus</option>
+                                <option>Oppo</option>
+                                <option>Xiaomi</option>
+                                <option>Nokia</option>
+                                <option>Motorolla</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 d-none" id="sellStorageSection">
+                            <select class="form-select" name="storage-capacity" required>
+                                <option value="">Select Storage Capacity</option>
+                                <option>64GB</option>
+                                <option>128GB</option>
+                                <option>256GB</option>
+                                <option>512GB</option>
+                                <option>1TB</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <textarea class="form-control" name="device-condition" rows="3" 
+                                    placeholder="Describe device condition (scratches, dents, etc.)" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" type="submit">Sell Device</button>
+                    </div>
+                    <input type="text" name="_honey" style="display:none">
+                </form>
+            </div>
+
+            <!-- Buy Form -->
+            <div class="tab-pane fade" id="buy-form" role="tabpanel" aria-labelledby="buy-tab">
+                <form action="https://submitform.io/1HnqghZUy" method="POST" class="needs-validation" novalidate>
+                    <input type="hidden" name="_next" value="https://yourdomain.co/thank-you">
+                    <input type="hidden" name="emailto" value="info@techsmartrepair.co.uk">
+                    <input type="hidden" name="form-type" value="buy">
+
+                    <div class="row g-3 mb-4">
+                        <h5 class="mb-3">Buyer Information</h5>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <h5 class="mb-3">Device Requirements</h5>
+                        <div class="col-md-6">
+                            <select class="form-select" name="device-model" id="buyDeviceModel" required>
+                                <option value="">Select Preferred Model</option>
+                                <option>Apple</option>
+                                <option>Samsung</option>
+                                <option>Google</option>
+                                <option>Huawei</option>
+                                <option>OnePlus</option>
+                                <option>Oppo</option>
+                                <option>Xiaomi</option>
+                                <option>Nokia</option>
+                                <option>Motorolla</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 d-none" id="buyStorageSection">
+                            <select class="form-select" name="storage-capacity" required>
+                                <option value="">Select Required Storage</option>
+                                <option>64GB</option>
+                                <option>128GB</option>
+                                <option>256GB</option>
+                                <option>512GB</option>
+                                <option>1TB</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <textarea class="form-control" name="additional-info" rows="3" 
+                                    placeholder="Additional requirements or comments"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success btn-lg" type="submit">Request to Buy</button>
+                    </div>
+                    <input type="text" name="_honey" style="display:none">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer loaded via JavaScript -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+<script>
+    // Sell Form Storage Toggle
+    document.getElementById('sellDeviceModel').addEventListener('change', function() {
+        document.getElementById('sellStorageSection').classList.toggle('d-none', !this.value);
+    });
+
+    // Buy Form Storage Toggle
+    document.getElementById('buyDeviceModel').addEventListener('change', function() {
+        document.getElementById('buyStorageSection').classList.toggle('d-none', !this.value);
+    });
+
+    // Form Validation
+    (function () {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+
+</body>
+</html>
