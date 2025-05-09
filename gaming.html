@@ -854,7 +854,7 @@
         // Show homepage with all iPhones
         function showHomePage() {
             document.title = "Gaming console | Smart Tech";
-            // window.history.pushState({}, '', '/');
+            window.location.hash = '';
 
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = `
