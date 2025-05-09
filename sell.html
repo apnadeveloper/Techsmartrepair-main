@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Device | Smart Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Same styling as previous version */
+        .booking-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+        .booking-card { border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .section-title { color: #2c3e50; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <section class="booking-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="booking-card bg-white p-4 p-md-5 mb-4">
+                        <h2 class="text-center mb-5 section-title">SELL YOUR DEVICE</h2>
+
+                        <div id="formMessage" class="alert d-none" role="alert">
+                            <span id="messageText"></span>
+                        </div>
+
+                        <form id="sellForm" 
+                              action="https://formsubmit.co/noorblch@gmail.com" 
+                              method="POST"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="_next" value="https://yourdomain.com/sell.html#formMessage">
+                            <input type="hidden" name="_error" value="https://yourdomain.com/sell.html#formMessage">
+                            <input type="hidden" name="_subject" value="New Sell Request - SmartTech">
+                            
+                            <div class="row g-3">
+                                <!-- Personal Info -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        <label for="firstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        <label for="lastName">Last Name</label>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Info -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                                        <label for="phone">Phone</label>
+                                    </div>
+                                </div>
+
+                                <!-- Device Info -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="deviceBrand" name="deviceBrand" required>
+                                            <option value="">Select Brand</option>
+                                            <option>Apple</option>
+                                            <option>Samsung</option>
+                                            <option>Google</option>
+                                            <option>Huawei</option>
+                                            <option>OnePlus</option>
+                                            <option>Oppo</option>
+                                            <option>Xiaomi</option>
+                                            <option>Nokia</option>
+                                            <option>Motorola</option>
+                                        </select>
+                                        <label for="deviceBrand">Device Brand</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="model" name="model" required>
+                                        <label for="model">Device Model</label>
+                                    </div>
+                                </div>
+
+                                <!-- Device Condition -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="condition" name="condition" required>
+                                            <option value="">Select Condition</option>
+                                            <option>New</option>
+                                            <option>Used - Like New</option>
+                                            <option>Used - Good</option>
+                                            <option>Used - Fair</option>
+                                        </select>
+                                        <label for="condition">Device Condition</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="storage" name="storage" required>
+                                        <label for="storage">Storage Capacity (GB)</label>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Info -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="description" name="description" 
+                                            placeholder="Device Description" style="height: 100px"></textarea>
+                                        <label for="description">Device Description</label>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        SUBMIT SELL REQUEST
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load components
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar
+            document.getElementById('navbar-container').innerHTML = `
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">SmartTech</a>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="sell.html">Sell Device</a></li>
+                            <li class="nav-item"><a class="nav-link" href="buy.html">Buy Device</a></li>
+                        </ul>
+                    </div>
+                </nav>`;
+
+            // Footer
+            document.getElementById('footer-container').innerHTML = `
+                <footer class="bg-dark text-white py-4 mt-5">
+                    <div class="container text-center">
+                        <p class="mb-0">&copy; ${new Date().getFullYear()} SmartTech. All rights reserved.</p>
+                    </div>
+                </footer>`;
+        });
+
+        // Form Validation
+        document.getElementById('sellForm').addEventListener('submit', function(e) {
+            if(!validateForm()) {
+                e.preventDefault();
+                showMessage('Please fill all required fields', 'danger');
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+            document.querySelectorAll('[required]').forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('is-invalid');
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+            return isValid;
+        }
+
+        function showMessage(text, type) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.classList.remove('d-none', 'alert-success', 'alert-danger');
+            formMessage.classList.add(`alert-${type}`);
+            document.getElementById('messageText').textContent = text;
+            formMessage.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
