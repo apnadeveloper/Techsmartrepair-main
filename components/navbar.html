@@ -10,11 +10,11 @@
     <!-- iOS Optimization CSS -->
     <style>
          .navbar{
-            border-bottom: 5px inset #c10f6b;
-             border-bottom-right-radius: 20px;
+            border-bottom: 5px solid #c10f6b;
+            border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px; 
             /* border-radius: 80px; */
-            padding:5px 10px 5px 10px;
+            
             
          }
         /* Safari-specific fixes */
@@ -54,6 +54,11 @@
         @media (max-width: 768px) {
             .navbar-brand img {
                 max-width: 160px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .navbar {
+            padding:5px 20px 5px 20px;
             }
         }
     </style>
