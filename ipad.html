@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,6 @@
             --light-color: #f8f9fa;
             --dark-color: #212529;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--dark-color);
@@ -39,7 +37,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .iphone-header::before {
             content: "";
             position: absolute;
@@ -68,7 +65,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            margin-bottom: 2rem;
+            margin-bottom: auto;
             overflow: hidden;
             border-top: 4px solid var(--primary-color);
         }
@@ -478,7 +475,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/2016.png',
                 options: [
                     {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£30.00',
                         specs: {
                             'Quality': 'High Quality parts',
@@ -555,7 +552,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/8-2020.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£30.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -631,7 +628,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/7th-gen-2019.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£30.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -700,12 +697,12 @@
                  
                 ]
             },
-            'ipad-5th-gen-(a1822-a823)': {
-                title: 'IPad 5th Gen (A1822-A823)',
+            'ipad-5th-gen-(a1822, a823)': {
+                title: 'IPad 5th Gen (A1822, A823)',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/2016.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£40.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -778,19 +775,19 @@
                         icon: 'bi-battery'
                     },
                     {
-                        title: 'Digitizer ',
+                        title: 'Touch screens',
                         price: '£40',
                         icon: 'bi-display'
                     },
                 ]
             },
 
-            'ipad-6th-gen-(a1893-a1954)': {
-                title: 'IPad 6th Gen (A1893-A1954)',
+            'ipad-6th-gen-(a1893, a1954)': {
+                title: 'IPad 6th Gen (A1893, A1954)',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/8-2020.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£45.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -865,7 +862,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/7th-gen-2019.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£50.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -940,7 +937,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/6-2018.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£55.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -1015,7 +1012,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/5-2017.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£60.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -1090,7 +1087,7 @@
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/ipad4.png',
                 options: [
                      {
-                        name: 'Digitizer ',
+                        name: 'Touch screens',
                         price: '£80.00',
                         specs: {
                             'Repair Type': 'High Quality parts',
@@ -2696,7 +2693,7 @@
                                 <div class="iphone-card h-100">
                                     <img src="${product.image}" class="iphone-img" alt="${product.title}">
                                     <div class="card-body text-center">
-                                        <h3 class="h5 mb-3">${product.title}</h3>
+                                        <h3 class="h6 mb-3">${product.title}</h3>
                                         <div class="d-grid">
                                             <button class="btn btn-primary" onclick="showProductDetail('${id}')">View Options</button>
                                         </div>
