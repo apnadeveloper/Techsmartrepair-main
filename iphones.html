@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -352,7 +353,7 @@
         .summary-label {
             font-weight: 600;
         }
-       
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .iphone-header {
@@ -412,7 +413,7 @@
                     <span id="modalPrice">£279.00</span>
                 </div>
             </div>
-             <form id="bookingForm" action="send-booking.php" method="POST">
+            <form id="bookingForm" action="send-booking.php" method="POST">
                 <input type="hidden" name="_subject" value="Iphone Repair Booking">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="#">
@@ -446,7 +447,8 @@
                                 </option>
                                 <option value="11 Swanley high street BR8 8AE">11 Swanley high street BR8 8AE
                                 </option>
-                                <option value="4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ">4, Rice Parade, Fairway,
+                                <option value="4, Rice Parade, Fairway, Petts Wood, Orpington BR5 1EQ">4, Rice Parade,
+                                    Fairway,
                                     Petts Wood, Orpington BR5 1EQ </option>
                                 <option value="407 footscrey road new Eltham SE9 3UL">407 footscrey road new
                                     Eltham SE9 3UL</option>
@@ -4049,35 +4051,7 @@
                 ]
             },
 
-
-
-
-            // ... (other iPhone models with their additional services)
-            // Note: For brevity, I've only shown two models with additional services
-            // You would add similar additionalServices arrays to all your iPhone models
         };
-
-        // Common additional services that apply to all models
-        // const commonAdditionalServices = [
-        //     {
-        //         title: 'Liquid Damage Repair',
-        //         price: '£99.00+',
-        //         icon: 'bi-droplet',
-        //         description: 'Diagnosis and repair for water damaged devices'
-        //     },
-        //     {
-        //         title: 'Data Recovery',
-        //         price: '£129.00+',
-        //         icon: 'bi-hdd',
-        //         description: 'Recover your important data from damaged devices'
-        //     },
-        //     {
-        //         title: 'Software Repair',
-        //         price: '£59.00',
-        //         icon: 'bi-code-slash',
-        //         description: 'Fix software issues and restore functionality'
-        //     }
-        // ];
 
         // Show homepage with all iPhones
         function showHomePage() {
@@ -4192,7 +4166,7 @@
                                             ${service.title}
                                         </div>
                                         <div class="service-price">${service.price}</div>
-                                        <p class="small text-muted mb-2">${service.description}</p>
+                                        
                                         <button class="btn btn-add-to-cart w-100" 
                                             onclick="openBookingModal('${product.title}', '${service.title}', '${service.price}')">
                                             Book Now
