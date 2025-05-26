@@ -9819,23 +9819,11 @@
                     
                     <div class="row g-4">
                         <!-- Specifications Column -->
-                        <div class="col-md-3">
-                            <div class="repair-card border-0" style="background-color: #ffffff; box-shadow: none;">
-                                <div class="repair-title pt-1">
-                                    <p class="fw-bold" style="color:var(--primary-color);"> <br>Screen Replacement</p>
-                                </div>
-
-                                ${Object.keys(product.options[0].specs).map(spec => `
-                                    <div class="spec-item">
-                                        <div class="spec-value fw-bold">${spec}</div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
+                       
                         
                         <!-- Product Options -->
                         ${product.options.map((option, index) => `
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="repair-card ${index === 2 ? 'highlight-card' : ''}" 
                                     style="background-color: ${index === 2 ? 'var(--light-pink)' : '#ffffff'};">
                                     ${index === 2 ? '<div class="highlight-badge">Popular</div>' : ''}
