@@ -375,6 +375,9 @@
                 margin: 10% auto;
             }
         }
+        .cap{
+            text-transform: capitalize!important;
+        }
     </style>
 </head>
 
@@ -638,7 +641,7 @@
             },
 
             'iwatch-series-ultra-2-2023(49MM)': {
-                title: 'Apple Watch Series ULTRA 2 2023(49MM)',
+                title: 'Apple Watch Series Ultra 2 2023(49MM)',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/IWATCH-ULTRA-2-1536x1536.jpg',
                 options: [
                     {
@@ -718,7 +721,7 @@
                 ]
             },
             'iwatch-series-ultra-2022(49MM)': {
-                title: 'Apple Watch Series ULTRA 2022(49MM)',
+                title: 'Apple Watch Series Ultra 2022(49MM)',
                 image: 'https://nadia.apnadeveloper.com/wp-content/uploads/2023/07/IWATCH-ULTRA-1-1536x1536.jpg',
                 options: [ 
                     {
@@ -2747,7 +2750,7 @@
                                 <div class="iphone-card h-100">
                                     <img src="${product.image}" class="iphone-img" alt="${product.title}">
                                     <div class="card-body text-center">
-                                        <h3 class="h6 mb-3">${product.title}</h3>
+                                        <h3 class="h6 mb-3 cap">${product.title}</h3>
                                         <div class="d-grid">
                                             <button class="btn btn-primary" onclick="showProductDetail('${id}')">View Options</button>
                                         </div>
@@ -2779,7 +2782,7 @@
                 
                 <div class="repair-section">
                     <div class="repair-header">
-                        <h3 class="h6 fw-bold" style="text-transform: capitalize;">${product.title}</h3>
+                        <h3 class="fw-bold">${product.title}</h3>
                         <h3 class="fw-bold">Repairing Details</h3>
                     </div>
                     
